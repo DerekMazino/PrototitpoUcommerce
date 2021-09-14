@@ -11,6 +11,6 @@ public class main
     {
         U_commerce uc = new U_commerce();
         uc.insertarDatosUcommerce();
-        uc.menu();
+        uc.menuPrincipal();
     }
 }

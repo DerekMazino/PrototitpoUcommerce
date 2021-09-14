@@ -2,8 +2,12 @@
 comment0.target=U_commerce
 comment1.params=
 comment1.target=void\ insertarDatosUcommerce()
-comment2.params=
-comment2.target=void\ listarTiendas()
-comment3.params=
-comment3.target=void\ menu()
-numComments=4
+comment2.params=seccion
+comment2.target=void\ verSeccion(Seccion)
+comment3.params=tienda
+comment3.target=void\ verInformaci\u00F3nTienda(Tienda)
+comment4.params=
+comment4.target=void\ verTiendas()
+comment5.params=
+comment5.target=void\ menuPrincipal()
+numComments=6

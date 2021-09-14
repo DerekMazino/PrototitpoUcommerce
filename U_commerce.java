@@ -12,6 +12,7 @@ import java.util.Scanner;
 public class U_commerce{
     static Scanner sc = new Scanner(System.in);
     private ArrayList<Tienda> tiendas = new ArrayList<Tienda>();
+    private ArrayList<Producto> productosAPP = new ArrayList<Producto>();
     public void insertarDatosUcommerce()
     {  
         //Usuarios Vendedores String nombre, String apellido, int codigo, String email, long celular, char genero, String password
@@ -65,19 +66,41 @@ public class U_commerce{
         s4.agregarProducto(p7);
         s7.agregarProducto(p8);
     }
-
-    public void listarTiendas(){
-        int i = 0;
-        for(Tienda tienda: tiendas){
-            i++;
-            System.out.println(i+". "+tienda.getNombreTienda());
-        }
+    
+    public void verSeccion(Seccion seccion){
+        System.out.println("---"+seccion.getNombre()+"---");
+        System.out.println();
+        seccion.listarSeccion();
+        System.out.println();
     }
     
-    public void menu()
+    public void verInformaciónTienda(Tienda tienda){
+        int opcion;
+        System.out.println("Bienvenid@s a "+tienda.getNombreTienda());
+        System.out.println("");
+        System.out.println("Mira nuestras Secciones");
+        tienda.ListarSecciones();
+        System.out.println("");
+        System.out.print("Digite el número de sección para entrar: ");
+        opcion = sc.nextInt();
+        verSeccion(tienda.getSecciones().get(opcion-1));
+    }
+    
+    public void verTiendas(){
+        int i = 0;
+        int opcion;
+        for(Tienda tienda: tiendas){
+                i++;
+                System.out.println(i+". "+tienda.getNombreTienda());
+        }
+        System.out.print("Digite el número de tienda a la que deseas visitar: ");
+        opcion = sc.nextInt();
+        verInformaciónTienda(tiendas.get(opcion-1));
+    }
+
+    public void menuPrincipal()
     {
         int opcion;
-
         do
         {
             System.out.println("\nMENU DE OPCIONES");
@@ -90,8 +113,7 @@ public class U_commerce{
             switch(opcion)
             {
                 case 1:
-                    //Mostrar Aeropuertos
-                    listarTiendas();
+                    verTiendas();
                     break;
                 case 2:
                     System.out.print("Mantenimiento");
@@ -104,9 +126,7 @@ public class U_commerce{
                     break;
                 default:
 
-                
             }
-
         }while(opcion!=4);
     }
 }

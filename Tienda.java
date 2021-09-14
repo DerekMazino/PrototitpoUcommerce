@@ -24,6 +24,10 @@ public class Tienda {
         this.nombreTienda = nombreTienda;
     }
     
+    public ArrayList<Seccion> getSecciones (){
+        return this.secciones;
+    }
+    
     public void añadirSeccion(Seccion seccion){
         this.secciones.add(seccion);
     } 
