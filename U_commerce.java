@@ -8,6 +8,7 @@
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
+import java.lang.ProcessBuilder;
 
 public class U_commerce{
     static Scanner sc = new Scanner(System.in);
@@ -72,15 +73,20 @@ public class U_commerce{
         s7.agregarProducto(p8);
     }
 
+    public void agregarAlCarrito(Producto producto){
+        System.out.println("Digite la cantidad a agregar");
+        Integer cantidad = sc.nextInt();
+        carrito.agregarProducto(producto, cantidad);
+    }
+
     public void verProducto(Producto producto, Seccion seccion){
         int opcion;
         producto.mostrarProducto();
         System.out.println("1. Agregar al carrito de compras");
         System.out.println("2. Volver a la sección anterior");
         opcion = sc.nextInt();
-        if(opcion == 1){
-            carrito.agregarProducto(producto);
-        }
+        if(opcion == 1)
+            agregarAlCarrito(producto);
         verSeccion(seccion);
     }
 
@@ -125,6 +131,7 @@ public class U_commerce{
     public void verTiendas(){
         int opcion;
         do{
+           
             int i = 0;
             for(Tienda tienda: tiendas){
                 i++;
@@ -144,7 +151,8 @@ public class U_commerce{
     {
         int opcion;
         do
-        {   System.out.println("\nU-COMMERCE!!!");
+        {   
+            System.out.println("\nU-COMMERCE!!!");
             System.out.println("\nMENU DE OPCIONES");
             System.out.println("1. Ver Tiendas");
             System.out.println("2. Ver productos");

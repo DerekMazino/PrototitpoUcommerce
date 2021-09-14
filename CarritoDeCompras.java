@@ -6,29 +6,43 @@
  * @version (Version 1.0)
  */
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class CarritoDeCompras {
     Tienda tienda;
     Usuario usuario;
-    ArrayList<Producto> elementos;
+    HashMap<Producto, Integer> productos;
 
     public CarritoDeCompras(Usuario usuario, Tienda tienda) {
         this.usuario = usuario;
         this.tienda = tienda;
-        elementos = new ArrayList<Producto>();
+        productos = new HashMap<Producto, Integer>();
+    }
+
+    public void agregarProducto(Producto producto, Integer nuevaCantidad){
+        if(productos.containsKey(producto)){
+            Integer cantidad = productos.get(producto) + nuevaCantidad;
+            this.productos.put(producto, cantidad);
+        }else{
+            this.productos.put(producto, nuevaCantidad);
+        }
+    }
+
+    public void eliminarProducto(Producto producto){
+        this.productos.remove(producto);
+    }
+
+    public void vaciarCarrito(Producto producto){
+        this.productos.clear();
+    }
+
+    public HashMap<Producto, Integer> getCarrito(){
+        return productos;
     }
     
-    public void agregarProducto(Producto producto){
-        this.elementos.add(producto);
-    }
-    public void eliminarProducto(Producto producto){
-        this.elementos.remove(producto);
-    }
-    public void vaciarCarrito(Producto producto){
-        this.elementos.clear();
-    }
-    public ArrayList<Producto> getCarrito(){
-        return elementos;
+    public int getCantidadProductos(){
+        return productos.size();
     }
 }
 
