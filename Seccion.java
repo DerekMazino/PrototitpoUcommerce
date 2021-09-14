@@ -52,8 +52,12 @@ public class Seccion {
         return null;
     }
     
-    public ArrayList<Producto> listarSeccion() {
-        return productos;
+    public void listarSeccion() {
+        int index = 1;
+        for(Producto producto: productos){
+            System.out.println(index+": "+producto.getNombre());
+            index++;
+        }
     }
     
 }

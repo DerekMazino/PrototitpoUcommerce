@@ -7,7 +7,6 @@
  */
 import java.util.ArrayList;
 public abstract class Producto {
-    private int idProducto;
     private String nombre;
     private String descripcion;
     private Categoria categoria;

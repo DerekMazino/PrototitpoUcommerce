@@ -15,5 +15,5 @@ comment6.target=boolean\ eliminarProducto(java.lang.String)
 comment7.params=nombreProducto
 comment7.target=Producto\ buscarProducto(java.lang.String)
 comment8.params=
-comment8.target=java.util.ArrayList\ listarSeccion()
+comment8.target=void\ listarSeccion()
 numComments=9
