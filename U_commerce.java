@@ -67,11 +67,19 @@ public class U_commerce{
         s7.agregarProducto(p8);
     }
     
+    public void verProducto(Producto producto){
+        producto.mostrarProducto();
+    }
+    
     public void verSeccion(Seccion seccion){
+        int opcion;
         System.out.println("---"+seccion.getNombre()+"---");
         System.out.println();
         seccion.listarSeccion();
         System.out.println();
+        System.out.print("Digite el número de sección para entrar: ");
+        opcion = sc.nextInt();
+        verProducto(seccion.getProductos().get(opcion-1));
     }
     
     public void verInformaciónTienda(Tienda tienda){

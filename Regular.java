@@ -40,10 +40,10 @@ public class Regular extends Producto{
 
     @Override
     public void mostrarProducto(){
-        System.out.print("-------------------------");
-        System.out.print("Nombre: "+this.getNombre());
-        System.out.print("Descripción: "+this.getDescripcion());
-        System.out.print("Precio: "+this.precioUnitario);
-        System.out.print("Unidades Disponibles: "+this.stock);
+        System.out.println("-------------------------");
+        System.out.println("Nombre: "+this.getNombre());
+        System.out.println("Descripción: "+this.getDescripcion());
+        System.out.println("Precio: "+this.precioUnitario);
+        System.out.println("Unidades Disponibles: "+this.stock);
     }
 }

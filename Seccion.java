@@ -21,7 +21,11 @@ public class Seccion {
     public String getNombre() {
         return nombre;
     }
-
+    
+    public ArrayList<Producto> getProductos(){
+        return productos;
+    }
+    
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
