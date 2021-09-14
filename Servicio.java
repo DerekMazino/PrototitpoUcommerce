@@ -40,11 +40,11 @@ public class Servicio extends Producto{
     
     @Override
     public void mostrarProducto(){
-        System.out.print("-------------------------");
-        System.out.print("Nombre: "+this.getNombre());
-        System.out.print("Descripción: "+this.getNombre());
-        System.out.print("Precio: "+this.costoPorCupo);
-        System.out.print("Cupos Disponibles: "+this.cupos);
+        System.out.println("-------------------------");
+        System.out.println("Nombre: "+this.getNombre());
+        System.out.println("Descripción: "+this.getNombre());
+        System.out.println("Precio: "+this.costoPorCupo);
+        System.out.println("Cupos Disponibles: "+this.cupos);
     }
 }
 
