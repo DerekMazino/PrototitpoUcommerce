@@ -23,26 +23,39 @@ public class Tienda {
     public void setNombreTienda(String nombreTienda) {
         this.nombreTienda = nombreTienda;
     }
-
-    public ArrayList<Seccion> ListarSecciones() {
-        return secciones;
-    }
     
     public void añadirSeccion(Seccion seccion){
         this.secciones.add(seccion);
     } 
     
     public void modificarSeccion(Seccion seccion){
-        
+        secciones.set(secciones.indexOf(seccion), seccion);
     } 
     
-    public void eliminarSeccion(Seccion seccion){
-        
+    public boolean eliminarSeccion(String nombreSeccion){
+        Seccion se = buscarSeccion(nombreSeccion);
+        if(se!=null){
+            secciones.remove(se);
+            return true;
+        }
+        return false;
     } 
     
-    public Object buscarProducto(String nombre){
+    public Seccion buscarSeccion(String nombreSeccion){
+        for(Seccion seccion:secciones){
+            if(seccion.getNombre().equals(nombreSeccion)){
+                return seccion;
+            }
+        }
         return null;
     }
     
+    public void ListarSecciones() {
+        int index = 1;
+        for(Seccion seccion: secciones){
+            System.out.println(index+": "+seccion.getNombre());
+            index++;
+        }
+    }
 }
 
