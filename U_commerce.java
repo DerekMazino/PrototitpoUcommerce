@@ -86,15 +86,20 @@ public class U_commerce{
 
     public void verSeccion(Seccion seccion){
         int opcion;
-        System.out.println("---"+seccion.getNombre()+"---");
-        System.out.println();
-        System.out.println("Carrito de Compras: "+carrito.getCarrito().size());
-        System.out.println();
-        seccion.listarSeccion();
-        System.out.println();
-        System.out.print("Digite el número de sección para entrar: ");
-        opcion = sc.nextInt();
-        verProducto(seccion.getProductos().get(opcion-1), seccion);
+        do{
+            System.out.println("---"+seccion.getNombre()+"---");
+            System.out.println();
+            System.out.println("Carrito de Compras: "+carrito.getCarrito().size());
+            System.out.println();
+            seccion.listarSeccion();
+            System.out.println();
+            System.out.print("Digite el número de sección para entrar,\no cualquier otra valor para salir  ");
+            opcion = sc.nextInt();
+            if(opcion<1 || opcion>seccion.getProductos().size()-1){
+                break;
+            }
+            verProducto(seccion.getProductos().get(opcion-1), seccion);
+        }while(true);
     }
 
     public void verInformaciónTienda(Tienda tienda){
@@ -102,14 +107,18 @@ public class U_commerce{
         if(carrito == null){
             carrito = new CarritoDeCompras(usuario, tienda);
         }
-        System.out.println("Bienvenid@s a "+tienda.getNombreTienda());
-        System.out.println("Carrito de Compras: "+carrito.getCarrito().size());
-        System.out.println("Mira nuestras Secciones");
-        tienda.ListarSecciones();
-        System.out.println("");
-        System.out.print("Digite el número de sección para entrar: ");
-        opcion = sc.nextInt();
-        verSeccion(tienda.getSecciones().get(opcion-1));
+        do{
+            System.out.println("Bienvenid@s a "+tienda.getNombreTienda());
+            System.out.println("Carrito de Compras: "+carrito.getCarrito().size());
+            System.out.println("Mira nuestras Secciones");
+            tienda.ListarSecciones();
+            System.out.print("Digite el número de sección para entrar\no cualquier otra valor para salir ");
+            opcion = sc.nextInt();
+            if(opcion<1 || opcion>tienda.getSecciones().size()-1){
+                break;
+            }
+            verSeccion(tienda.getSecciones().get(opcion-1));
+        }while(true);
     }
 
     public void verTiendas(){
@@ -128,11 +137,11 @@ public class U_commerce{
     {
         int opcion;
         do
-        {
+        {   System.out.println("\nU-COMMERCE!!!");
             System.out.println("\nMENU DE OPCIONES");
             System.out.println("1. Ver Tiendas");
             System.out.println("2. Ver productos");
-            System.out.println("3. Iniciar Sesión");
+            System.out.println("3. Menu de Usuario");
             System.out.println("4. Salir");
             System.out.print("Digite la opcion que desea realizar: ");
             opcion = sc.nextInt();
