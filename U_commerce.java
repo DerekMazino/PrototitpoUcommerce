@@ -112,7 +112,8 @@ public class U_commerce{
             System.out.println("Carrito de Compras: "+carrito.getCarrito().size());
             System.out.println("Mira nuestras Secciones");
             tienda.ListarSecciones();
-            System.out.print("Digite el número de sección para entrar\no cualquier otra valor para salir ");
+            System.out.print("Digite el número de sección para entrar\n");
+            System.out.print("o cualquier otra valor para salir");
             opcion = sc.nextInt();
             if(opcion<1 || opcion>tienda.getSecciones().size()-1){
                 break;
@@ -122,15 +123,21 @@ public class U_commerce{
     }
 
     public void verTiendas(){
-        int i = 0;
         int opcion;
-        for(Tienda tienda: tiendas){
-            i++;
-            System.out.println(i+". "+tienda.getNombreTienda());
-        }
-        System.out.print("Digite el número de tienda a la que deseas visitar: ");
-        opcion = sc.nextInt();
-        verInformaciónTienda(tiendas.get(opcion-1));
+        do{
+            int i = 0;
+            for(Tienda tienda: tiendas){
+                i++;
+                System.out.println(i+". "+tienda.getNombreTienda());
+            }
+            System.out.print("Digite el número de tienda a la que deseas visitar\n ");
+            System.out.print("o cualquier otra valor para salir");
+            opcion = sc.nextInt();
+            if(opcion<1 || opcion>tiendas.size()-1){
+                break;
+            }
+            verInformaciónTienda(tiendas.get(opcion-1));
+        }while(true);
     }
 
     public void menuPrincipal()
