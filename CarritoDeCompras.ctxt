@@ -8,4 +8,6 @@ comment3.params=producto
 comment3.target=void\ eliminarProducto(Producto)
 comment4.params=producto
 comment4.target=void\ vaciarCarrito(Producto)
-numComments=5
+comment5.params=
+comment5.target=java.util.ArrayList\ getCarrito()
+numComments=6

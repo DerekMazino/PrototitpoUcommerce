@@ -15,6 +15,7 @@ public class CarritoDeCompras {
     public CarritoDeCompras(Usuario usuario, Tienda tienda) {
         this.usuario = usuario;
         this.tienda = tienda;
+        elementos = new ArrayList<Producto>();
     }
     
     public void agregarProducto(Producto producto){
@@ -26,6 +27,8 @@ public class CarritoDeCompras {
     public void vaciarCarrito(Producto producto){
         this.elementos.clear();
     }
-
+    public ArrayList<Producto> getCarrito(){
+        return elementos;
+    }
 }
 

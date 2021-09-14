@@ -88,6 +88,8 @@ public class U_commerce{
         int opcion;
         System.out.println("---"+seccion.getNombre()+"---");
         System.out.println();
+        System.out.println("Carrito de Compras: "+carrito.getCarrito().size());
+        System.out.println();
         seccion.listarSeccion();
         System.out.println();
         System.out.print("Digite el número de sección para entrar: ");
@@ -101,7 +103,7 @@ public class U_commerce{
             carrito = new CarritoDeCompras(usuario, tienda);
         }
         System.out.println("Bienvenid@s a "+tienda.getNombreTienda());
-        System.out.println("");
+        System.out.println("Carrito de Compras: "+carrito.getCarrito().size());
         System.out.println("Mira nuestras Secciones");
         tienda.ListarSecciones();
         System.out.println("");
