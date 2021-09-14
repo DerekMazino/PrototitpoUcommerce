@@ -2,8 +2,8 @@
 comment0.target=U_commerce
 comment1.params=
 comment1.target=void\ insertarDatosUcommerce()
-comment2.params=producto
-comment2.target=void\ verProducto(Producto)
+comment2.params=producto\ seccion
+comment2.target=void\ verProducto(Producto,\ Seccion)
 comment3.params=seccion
 comment3.target=void\ verSeccion(Seccion)
 comment4.params=tienda

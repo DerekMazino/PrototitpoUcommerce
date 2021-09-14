@@ -13,11 +13,16 @@ public class U_commerce{
     static Scanner sc = new Scanner(System.in);
     private ArrayList<Tienda> tiendas = new ArrayList<Tienda>();
     private ArrayList<Producto> productosAPP = new ArrayList<Producto>();
+    private ArrayList<Usuario> usuarios = new ArrayList<Usuario>();
+    private CarritoDeCompras carrito;
+    private Usuario usuario = new Usuario();
     public void insertarDatosUcommerce()
     {  
         //Usuarios Vendedores String nombre, String apellido, int codigo, String email, long celular, char genero, String password
         Usuario usuario1 = new Usuario("Camilo", "Marín", "2172368", "juan2172368@gmail.com", "3123731199", 'M', "123456");
         Usuario usuario2 = new Usuario("Alejandra", "Estevez", "2175345", "maria2175345@gmail.com", "3172139828", 'F', "123456");
+        usuarios.add(usuario1);
+        usuarios.add(usuario2);
         //Tiendas de cada usuario vendendor
         Tienda tienda1 = new Tienda("Postres! lml");
         Tienda tienda2 = new Tienda("Ele-accesorios");
@@ -66,11 +71,19 @@ public class U_commerce{
         s4.agregarProducto(p7);
         s7.agregarProducto(p8);
     }
-    
-    public void verProducto(Producto producto){
+
+    public void verProducto(Producto producto, Seccion seccion){
+        int opcion;
         producto.mostrarProducto();
+        System.out.println("1. Agregar al carrito de compras");
+        System.out.println("2. Volver a la sección anterior");
+        opcion = sc.nextInt();
+        if(opcion == 1){
+            carrito.agregarProducto(producto);
+        }
+        verSeccion(seccion);
     }
-    
+
     public void verSeccion(Seccion seccion){
         int opcion;
         System.out.println("---"+seccion.getNombre()+"---");
@@ -79,11 +92,14 @@ public class U_commerce{
         System.out.println();
         System.out.print("Digite el número de sección para entrar: ");
         opcion = sc.nextInt();
-        verProducto(seccion.getProductos().get(opcion-1));
+        verProducto(seccion.getProductos().get(opcion-1), seccion);
     }
-    
+
     public void verInformaciónTienda(Tienda tienda){
         int opcion;
+        if(carrito == null){
+            carrito = new CarritoDeCompras(usuario, tienda);
+        }
         System.out.println("Bienvenid@s a "+tienda.getNombreTienda());
         System.out.println("");
         System.out.println("Mira nuestras Secciones");
@@ -93,13 +109,13 @@ public class U_commerce{
         opcion = sc.nextInt();
         verSeccion(tienda.getSecciones().get(opcion-1));
     }
-    
+
     public void verTiendas(){
         int i = 0;
         int opcion;
         for(Tienda tienda: tiendas){
-                i++;
-                System.out.println(i+". "+tienda.getNombreTienda());
+            i++;
+            System.out.println(i+". "+tienda.getNombreTienda());
         }
         System.out.print("Digite el número de tienda a la que deseas visitar: ");
         opcion = sc.nextInt();
@@ -124,10 +140,10 @@ public class U_commerce{
                     verTiendas();
                     break;
                 case 2:
-                    System.out.print("Mantenimiento");
+                    System.out.print("Mantenimiento...");
                     break;   
                 case 3:
-                    System.out.print("Mantenimiento");
+                    System.out.print("Mantenimiento...");
                     break; 
                 case 4:
                     System.out.println("\n¡ADIOS!");
