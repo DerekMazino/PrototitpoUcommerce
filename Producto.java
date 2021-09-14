@@ -28,8 +28,12 @@ public abstract class Producto {
         comentarios = new ArrayList();
     }
 
-    public ArrayList<Comentario> getComentarios() {
-        return comentarios;
+    public void mostrarComentarios() {
+        int index = 1;
+        for(Comentario comentario: comentarios){
+            System.out.println(comentario);
+            index++;
+        }
     }
     
     public String getNombre() {
@@ -48,8 +52,8 @@ public abstract class Producto {
         this.descripcion = descripcion;
     }
 
-    public Categoria getCategoria() {
-        return categoria;
+    public String getCategoria() {
+        return categoria.getNombre();
     }
 
     public void setCategoria(Categoria categoria) {
