@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.target=Categoria
+comment0.text=\n\ Write\ a\ description\ of\ class\ Categoria\ here.\n\ \n\ @author\ (Camilo\ Mar\u00EDn,\ Deyci\ Toloza)\ \n\ @version\ (Version\ 1.0)\n
+comment1.params=
+comment1.target=Categoria()
+comment2.params=
+comment2.target=java.lang.String\ getNombre()
+comment3.params=
+comment3.target=java.lang.String\ getDescripci\u00F3n()
+comment4.params=
+comment4.target=java.lang.String\ toString()
+numComments=5

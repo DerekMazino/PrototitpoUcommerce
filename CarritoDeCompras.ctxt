@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=CarritoDeCompras
+comment1.params=usuario\ tienda
+comment1.target=CarritoDeCompras(Usuario,\ Tienda)
+comment2.params=producto
+comment2.target=void\ agregarProducto(Producto)
+comment3.params=producto
+comment3.target=void\ eliminarProducto(Producto)
+comment4.params=producto
+comment4.target=void\ vaciarCarrito(Producto)
+comment5.params=
+comment5.target=void\ comprarElementos()
+numComments=6

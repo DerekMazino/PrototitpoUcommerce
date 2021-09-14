@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=Comentario
+comment0.text=\n\ Write\ a\ description\ of\ class\ Comentario\ here.\n\ \n\ @author\ (Camilo\ Mar\u00EDn,\ Deyci\ Toloza)\ \n\ @version\ (Version\ 1.0)\n
+comment1.params=mensajeCliente\ mensaje
+comment1.target=Comentario(Usuario,\ java.lang.String)
+comment2.params=
+comment2.target=java.lang.String\ toString()
+comment3.params=mensajeRespuesta
+comment3.target=void\ setMensajeRespuesta(Comentario)
+numComments=4

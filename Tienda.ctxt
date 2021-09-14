@@ -1,0 +1,19 @@
+#BlueJ class context
+comment0.target=Tienda
+comment1.params=nombreTienda
+comment1.target=Tienda(java.lang.String)
+comment2.params=
+comment2.target=java.lang.String\ getNombreTienda()
+comment3.params=nombreTienda
+comment3.target=void\ setNombreTienda(java.lang.String)
+comment4.params=
+comment4.target=java.util.ArrayList\ ListarSecciones()
+comment5.params=seccion
+comment5.target=void\ a\u00F1adirSeccion(Seccion)
+comment6.params=seccion
+comment6.target=void\ modificarSeccion(Seccion)
+comment7.params=seccion
+comment7.target=void\ eliminarSeccion(Seccion)
+comment8.params=nombre
+comment8.target=java.lang.Object\ buscarProducto(java.lang.String)
+numComments=9

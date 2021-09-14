@@ -1,0 +1,17 @@
+#BlueJ class context
+comment0.target=U_commerce
+comment1.params=ref_compra\ carrito
+comment1.target=U_commerce(int,\ CarritoDeCompras)
+comment2.params=
+comment2.target=void\ generarCompra()
+comment3.params=
+comment3.target=double\ calcularCosto()
+comment4.params=confirmacion
+comment4.target=void\ confirmarEntrega(boolean)
+comment5.params=
+comment5.target=void\ notificarAlVendedor()
+comment6.params=
+comment6.target=void\ calificarVendedor()
+comment7.params=
+comment7.target=void\ calificarCliente()
+numComments=8

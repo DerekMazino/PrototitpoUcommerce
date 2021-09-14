@@ -1,0 +1,20 @@
+#BlueJ class context
+comment0.target=Servicio
+comment0.text=\n\ Write\ a\ description\ of\ class\ Servicio\ here.\n\ \n\ @author\ (Camilo\ Marin,\ Deyci\ Toloza)\ \n\ @version\ (Version\ 1.0)\n
+comment1.params=cupos\ costoPorCupo\ nombre\ descripcion\ categoria
+comment1.target=Servicio(int,\ double,\ java.lang.String,\ java.lang.String,\ Categoria)
+comment2.params=cupos\ costoPorCupo\ nombre\ descripcion\ categoria\ imagen
+comment2.target=Servicio(int,\ double,\ java.lang.String,\ java.lang.String,\ Categoria,\ java.lang.String[])
+comment3.params=
+comment3.target=int\ getCupos()
+comment4.params=cupos
+comment4.target=void\ setCupos(int)
+comment5.params=
+comment5.target=double\ getCostoPorCupo()
+comment6.params=costoPorCupo
+comment6.target=void\ setCostoPorCupo(double)
+comment7.params=
+comment7.target=void\ registrarProducto()
+comment8.params=
+comment8.target=void\ modificarProducto()
+numComments=9

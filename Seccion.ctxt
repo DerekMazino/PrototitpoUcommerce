@@ -1,0 +1,19 @@
+#BlueJ class context
+comment0.target=Seccion
+comment1.params=nombre
+comment1.target=Seccion(java.lang.String)
+comment2.params=
+comment2.target=java.lang.String\ getNombre()
+comment3.params=nombre
+comment3.target=void\ setNombre(java.lang.String)
+comment4.params=producto
+comment4.target=void\ agregarProducto(Producto)
+comment5.params=producto
+comment5.target=void\ editarProducto(Producto)
+comment6.params=nombreProducto
+comment6.target=boolean\ eliminarProducto(java.lang.String)
+comment7.params=nombreProducto
+comment7.target=Producto\ buscarProducto(java.lang.String)
+comment8.params=
+comment8.target=java.util.ArrayList\ listarSeccion()
+numComments=9

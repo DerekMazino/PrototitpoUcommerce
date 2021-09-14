@@ -1,0 +1,80 @@
+
+/**
+ * Write a description of class Producto here.
+ * 
+ * @author (Camilo Marín, Deyci Toloza) 
+ * @version (Version 1.0)
+ */
+import java.util.ArrayList;
+public abstract class Producto {
+    private int idProducto;
+    private String nombre;
+    private String descripcion;
+    private Categoria categoria;
+    private String[] imagen;
+    private ArrayList<Comentario> comentarios;
+
+    public Producto(String nombre, String descripcion, Categoria categoria) {
+        this.nombre = nombre;
+        this.descripcion = descripcion;
+        this.categoria = categoria;
+        comentarios = new ArrayList();
+    }
+
+    public Producto(String nombre, String descripcion, Categoria categoria, String[] imagen) {
+        this.nombre = nombre;
+        this.descripcion = descripcion;
+        this.categoria = categoria;
+        this.imagen = imagen;
+        comentarios = new ArrayList();
+    }
+
+    public ArrayList<Comentario> getComentarios() {
+        return comentarios;
+    }
+    
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
+    public Categoria getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(Categoria categoria) {
+        this.categoria = categoria;
+    }
+
+    public String[] getImagen() {
+        return imagen;
+    }
+
+    public void setImagen(String imagen) {
+        this.imagen[imagen.length()] = imagen;
+    }
+    
+    public abstract void registrarProducto();
+    public abstract void modificarProducto();
+    
+    public void eliminarProducto(int idP ){
+        
+    }
+    
+    public Producto mostrarProducto(){
+        return this;
+    }
+    
+}
+
