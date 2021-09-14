@@ -64,16 +64,7 @@ public abstract class Producto {
         this.imagen[imagen.length()] = imagen;
     }
     
-    public abstract void registrarProducto();
-    public abstract void modificarProducto();
-    
-    public void eliminarProducto(int idP ){
-        
-    }
-    
-    public Producto mostrarProducto(){
-        return this;
-    }
+    public abstract void mostrarProducto();
     
 }
 

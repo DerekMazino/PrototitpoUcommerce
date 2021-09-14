@@ -10,13 +10,13 @@ public class Regular extends Producto{
     private int stock;
     private double precioUnitario;
 
-    public Regular(int stock, double precioUnitario, String nombre, String descripcion, Categoria categoria) {
+    public Regular(String nombre, String descripcion, Categoria categoria, int stock, double precioUnitario ) {
         super(nombre, descripcion, categoria);
         this.stock = stock;
         this.precioUnitario = precioUnitario;
     }
 
-    public Regular(int stock, double precioUnitario, String nombre, String descripcion, Categoria categoria, String[] imagen) {
+    public Regular(String nombre, String descripcion, Categoria categoria, String[] imagen, int stock, double precioUnitario) {
         super(nombre, descripcion, categoria, imagen);
         this.stock = stock;
         this.precioUnitario = precioUnitario;
@@ -39,14 +39,11 @@ public class Regular extends Producto{
     }
 
     @Override
-    public void registrarProducto() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void mostrarProducto(){
+        System.out.print("-------------------------");
+        System.out.print("Nombre: "+this.getNombre());
+        System.out.print("Descripción: "+this.getDescripcion());
+        System.out.print("Precio: "+this.precioUnitario);
+        System.out.print("Unidades Disponibles: "+this.stock);
     }
-
-    @Override
-    public void modificarProducto() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
-    
 }

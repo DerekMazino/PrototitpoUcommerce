@@ -10,13 +10,13 @@ public class Clasificado extends Producto{
     private double costo;
     private boolean estado;
 
-    public Clasificado(double costo, boolean estado, String nombre, String descripcion, Categoria categoria) {
+    public Clasificado(String nombre, String descripcion, Categoria categoria, double costo, boolean estado) {
         super(nombre, descripcion, categoria);
         this.costo = costo;
         this.estado = estado;
     }
 
-    public Clasificado(double costo, boolean estado, String nombre, String descripcion, Categoria categoria, String[] imagen) {
+    public Clasificado(String nombre, String descripcion, Categoria categoria, String[] imagen, double costo, boolean estado) {
         super(nombre, descripcion, categoria, imagen);
         this.costo = costo;
         this.estado = estado;
@@ -39,15 +39,12 @@ public class Clasificado extends Producto{
     }
 
     @Override
-    public void registrarProducto() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void mostrarProducto(){
+        System.out.println("-------------------------");
+        System.out.println("Nombre: "+this.getNombre());
+        System.out.println("Descripción: "+this.getDescripcion());
+        System.out.println("Precio: "+this.costo);
+        System.out.print("Estado: ");
+        System.out.print(this.estado ? "Nuevo" : "Usado");
     }
-
-    @Override
-    public void modificarProducto() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
-    
-    
 }

@@ -1,10 +1,10 @@
 #BlueJ class context
 comment0.target=Regular
 comment0.text=\n\ Write\ a\ description\ of\ class\ Regular\ here.\n\ \n\ @author\ (Camilo\ Mar\u00EDn,\ Deyci\ Toloza)\ \n\ @version\ (Versi\u00F3n\ 1)\n
-comment1.params=stock\ precioUnitario\ nombre\ descripcion\ categoria
-comment1.target=Regular(int,\ double,\ java.lang.String,\ java.lang.String,\ Categoria)
-comment2.params=stock\ precioUnitario\ nombre\ descripcion\ categoria\ imagen
-comment2.target=Regular(int,\ double,\ java.lang.String,\ java.lang.String,\ Categoria,\ java.lang.String[])
+comment1.params=nombre\ descripcion\ categoria\ stock\ precioUnitario
+comment1.target=Regular(java.lang.String,\ java.lang.String,\ Categoria,\ int,\ double)
+comment2.params=nombre\ descripcion\ categoria\ imagen\ stock\ precioUnitario
+comment2.target=Regular(java.lang.String,\ java.lang.String,\ Categoria,\ java.lang.String[],\ int,\ double)
 comment3.params=
 comment3.target=int\ getStock()
 comment4.params=stock
@@ -14,7 +14,5 @@ comment5.target=double\ getPrecioUnitario()
 comment6.params=precioUnitario
 comment6.target=void\ setPrecioUnitario(double)
 comment7.params=
-comment7.target=void\ registrarProducto()
-comment8.params=
-comment8.target=void\ modificarProducto()
-numComments=9
+comment7.target=void\ mostrarProducto()
+numComments=8

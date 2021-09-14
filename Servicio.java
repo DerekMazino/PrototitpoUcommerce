@@ -37,18 +37,14 @@ public class Servicio extends Producto{
     public void setCostoPorCupo(double costoPorCupo) {
         this.costoPorCupo = costoPorCupo;
     }
-
+    
     @Override
-    public void registrarProducto() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void mostrarProducto(){
+        System.out.print("-------------------------");
+        System.out.print("Nombre: "+this.getNombre());
+        System.out.print("Descripción: "+this.getNombre());
+        System.out.print("Precio: "+this.costoPorCupo);
+        System.out.print("Cupos Disponibles: "+this.cupos);
     }
-
-    @Override
-    public void modificarProducto() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
-    
-    
 }
 

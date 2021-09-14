@@ -1,10 +1,10 @@
 #BlueJ class context
 comment0.target=Clasificado
 comment0.text=\n\ Write\ a\ description\ of\ class\ Clasificado\ here.\n\ \n\ @author\ (Camilo\ Mar\u00EDn,\ Deyci\ Toloza)\ \n\ @version\ (Version\ 1.0)\n
-comment1.params=costo\ estado\ nombre\ descripcion\ categoria
-comment1.target=Clasificado(double,\ boolean,\ java.lang.String,\ java.lang.String,\ Categoria)
-comment2.params=costo\ estado\ nombre\ descripcion\ categoria\ imagen
-comment2.target=Clasificado(double,\ boolean,\ java.lang.String,\ java.lang.String,\ Categoria,\ java.lang.String[])
+comment1.params=nombre\ descripcion\ categoria\ costo\ estado
+comment1.target=Clasificado(java.lang.String,\ java.lang.String,\ Categoria,\ double,\ boolean)
+comment2.params=nombre\ descripcion\ categoria\ imagen\ costo\ estado
+comment2.target=Clasificado(java.lang.String,\ java.lang.String,\ Categoria,\ java.lang.String[],\ double,\ boolean)
 comment3.params=
 comment3.target=double\ getCosto()
 comment4.params=costo
@@ -14,7 +14,5 @@ comment5.target=boolean\ isestado()
 comment6.params=estado
 comment6.target=void\ setestado(boolean)
 comment7.params=
-comment7.target=void\ registrarProducto()
-comment8.params=
-comment8.target=void\ modificarProducto()
-numComments=9
+comment7.target=void\ mostrarProducto()
+numComments=8
