@@ -9,7 +9,9 @@ public class Categoria {
     private String nombre;
     private String descripción;
 
-    public Categoria() {
+    public Categoria(String nombre, String descripción) {
+        this.nombre = nombre;
+        this.descripción = descripción;
     }
 
     public String getNombre() {

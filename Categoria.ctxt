@@ -1,8 +1,8 @@
 #BlueJ class context
 comment0.target=Categoria
 comment0.text=\n\ Write\ a\ description\ of\ class\ Categoria\ here.\n\ \n\ @author\ (Camilo\ Mar\u00EDn,\ Deyci\ Toloza)\ \n\ @version\ (Version\ 1.0)\n
-comment1.params=
-comment1.target=Categoria()
+comment1.params=nombre\ descripci\u00F3n
+comment1.target=Categoria(java.lang.String,\ java.lang.String)
 comment2.params=
 comment2.target=java.lang.String\ getNombre()
 comment3.params=

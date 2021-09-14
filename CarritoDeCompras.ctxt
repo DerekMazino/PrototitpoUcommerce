@@ -8,6 +8,4 @@ comment3.params=producto
 comment3.target=void\ eliminarProducto(Producto)
 comment4.params=producto
 comment4.target=void\ vaciarCarrito(Producto)
-comment5.params=
-comment5.target=void\ comprarElementos()
-numComments=6
+numComments=5

@@ -13,8 +13,8 @@ public class Sesion
         
     }
     
-    public Usuario iniciarSesion(Usuario usuario){
-        return usuario;
+    public Usuario iniciarSesion(String identificacion, String contraseña){
+        return null;
     }
     
     public void cerrarSesion(Usuario usuario){

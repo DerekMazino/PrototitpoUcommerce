@@ -11,10 +11,11 @@ import java.util.ArrayList;
 public class Usuario {
     private String nombre;
     private String apellido;
-    private int codigo;
+    private String codigo;
+    private String password;
     //private int cc;
     private String email;
-    private long celular;
+    private String celular;
     private char genero;
     private boolean rol;//Si es 0, solo es cliente, si es 1, es ambos
     private double puntuacionCliente;
@@ -24,10 +25,11 @@ public class Usuario {
     public Usuario(){
     }
     
-    public Usuario(String nombre, String apellido, int codigo, String email, long celular, char genero) {
+    public Usuario(String nombre, String apellido, String codigo, String email, String celular, char genero, String password) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.codigo = codigo;
+        this.password = password;
         this.email = email;
         this.celular = celular;
         this.rol = false;
@@ -52,12 +54,20 @@ public class Usuario {
         this.apellido = apellido;
     }
 
-    public int getCodigo() {
+    public String getCodigo() {
         return codigo;
     }
 
-    public void setCodigo(int codigo) {
+    public void setCodigo(String codigo) {
         this.codigo = codigo;
+    }
+    
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public String getEmail() {
@@ -68,11 +78,11 @@ public class Usuario {
         this.email = email;
     }
 
-    public long getCelular() {
+    public String getCelular() {
         return celular;
     }
 
-    public void setCelular(long celular) {
+    public void setCelular(String celular) {
         this.celular = celular;
     }
 

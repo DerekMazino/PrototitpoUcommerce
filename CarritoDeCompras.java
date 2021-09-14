@@ -26,9 +26,6 @@ public class CarritoDeCompras {
     public void vaciarCarrito(Producto producto){
         this.elementos.clear();
     }
-    
-    public void comprarElementos(){
-        U_commerce u;
-    }
+
 }
 
