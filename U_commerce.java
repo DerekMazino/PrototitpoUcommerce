@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
 import java.lang.ProcessBuilder;
+import java.util.Collections;
 
 public class U_commerce{
     static Scanner sc = new Scanner(System.in);
@@ -156,7 +157,30 @@ public class U_commerce{
             break;
         }while(true);
     }
-
+    
+    public ArrayList<Producto> cargarProductos(){
+        ArrayList<Producto> productos = new ArrayList<Producto>();
+        for(Tienda tienda: tiendas){
+            for(Seccion seccion: tienda.getSecciones()){
+                for(Producto producto: seccion.getProductos()){
+                    productos.add(producto);
+                }
+            }
+        }
+        return productos;
+    }
+    
+    public void verTodosLosProductos(){
+        ArrayList<Producto> productos = cargarProductos();
+        Collections.shuffle(productos);
+        int c = 0;
+        for(Producto producto: productos){
+            c++;
+            System.out.println(c+". "+producto.getNombre() );
+        }
+        
+    }
+    
     public void menuPrincipal()
     {
         int opcion;
@@ -176,7 +200,7 @@ public class U_commerce{
                     verTiendas();
                     break;
                 case 2:
-                    System.out.print("Mantenimiento...");
+                    verTodosLosProductos();
                     break;   
                 case 3:
                     System.out.print("Mantenimiento...");
