@@ -16,7 +16,11 @@ public class ModuloCompras
     static Scanner sc = new Scanner(System.in);
     private CarritoDeCompras carrito;
     private Usuario usuario = new Usuario();
-    private DataSource dt = new DataSource();
+    private DataSource dt;
+    
+    public ModuloCompras(DataSource dt){
+        this.dt = dt;
+    }
     
     public void agregarAlCarrito(Producto producto){
         System.out.println("Digite la cantidad a agregar");

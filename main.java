@@ -11,8 +11,9 @@ public abstract class main
     static Scanner sc = new Scanner(System.in);
     
     public static void main(String[] args)
-    {
-        ModuloCompras mc = new ModuloCompras();
+    {   
+        DataSource dt = new DataSource();
+        ModuloCompras mc = new ModuloCompras(dt);
         ModuloVentas mv = new ModuloVentas();
         ModuloUsuario mu = new ModuloUsuario();
         
