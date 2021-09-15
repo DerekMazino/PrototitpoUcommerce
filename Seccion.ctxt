@@ -2,6 +2,8 @@
 comment0.target=Seccion
 comment1.params=nombre
 comment1.target=Seccion(java.lang.String)
+comment10.params=
+comment10.target=int\ getCantidadProductos()
 comment2.params=
 comment2.target=java.lang.String\ getNombre()
 comment3.params=
@@ -18,4 +20,4 @@ comment8.params=nombreProducto
 comment8.target=Producto\ buscarProducto(java.lang.String)
 comment9.params=
 comment9.target=void\ listarSeccion()
-numComments=10
+numComments=11

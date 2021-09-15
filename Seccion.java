@@ -64,5 +64,9 @@ public class Seccion {
         }
     }
     
+    public int getCantidadProductos(){
+        return this.productos.size();
+    }
+    
 }
 

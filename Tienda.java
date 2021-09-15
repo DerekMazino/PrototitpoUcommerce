@@ -28,6 +28,10 @@ public class Tienda {
         return this.secciones;
     }
     
+    public int getCantidadSecciones(){
+        return this.secciones.size();
+    }
+    
     public void añadirSeccion(Seccion seccion){
         this.secciones.add(seccion);
     } 
