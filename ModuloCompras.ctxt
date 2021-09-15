@@ -1,0 +1,15 @@
+#BlueJ class context
+comment0.target=ModuloCompras
+comment1.params=producto
+comment1.target=void\ agregarAlCarrito(Producto)
+comment2.params=producto
+comment2.target=void\ verProducto(Producto)
+comment3.params=seccion
+comment3.target=void\ verSeccion(Seccion)
+comment4.params=tienda
+comment4.target=void\ verInformaci\u00F3nTienda(Tienda)
+comment5.params=
+comment5.target=void\ imprimirTiendas()
+comment6.params=
+comment6.target=void\ verTiendas()
+numComments=7

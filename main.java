@@ -5,12 +5,46 @@
  * @author (your name) 
  * @version (a version number or a date)
  */
+import java.util.Scanner;
 public abstract class main
 {
+    static Scanner sc = new Scanner(System.in);
+    
     public static void main(String[] args)
     {
-        U_commerce uc = new U_commerce();
-        uc.insertarDatosUcommerce();
-        uc.menuPrincipal();
+        ModuloCompras mc = new ModuloCompras();
+        ModuloVentas mv = new ModuloVentas();
+        ModuloUsuario mu = new ModuloUsuario();
+        
+        int opcion;
+        do
+        {   
+            System.out.println("\nU-COMMERCE!!!");
+            System.out.println("\nMENU DE OPCIONES");
+            System.out.println("1. Módulo de Compras");
+            System.out.println("2. Módulo de Ventas");
+            System.out.println("3. Menu de Usuario");
+            System.out.println("4. Salir");
+            System.out.print("Digite la opcion que desea realizar: ");
+            opcion = sc.nextInt();
+            switch(opcion)
+            {
+                case 1:
+                    mc.verTiendas();
+                    break;
+                case 2:
+                    System.out.print("Mantenimiento...");
+                    break;   
+                case 3:
+                    System.out.print("Mantenimiento...");
+                    break; 
+                case 4:
+                    System.out.println("\n¡ADIOS!");
+                    break;
+                default:
+
+            }
+        }while(opcion!=4);
+        
     }
 }
