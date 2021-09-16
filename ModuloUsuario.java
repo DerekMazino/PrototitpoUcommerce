@@ -44,22 +44,30 @@ public class ModuloUsuario
     
     public void IniciarSesion(){
         boolean exito = false;
+        
         do{
+            sc.nextLine();
             System.out.println("Hola!");
             System.out.println("Digite su identifiación");
             String identificacion = sc.nextLine();
-            sc.nextLine();
             System.out.println("Digite su contraseña");
             String password = sc.nextLine();
-            sc.nextLine();
+            System.out.println("Datos Ingresados: "+ identificacion +" " +password);
             for(Usuario usuario: dt.getUsuarios()){
+                System.out.println("Datos en dt: "+ usuario.getCodigo()+ " "+ usuario.getPassword());
                 if(usuario.getCodigo().equals(identificacion) && usuario.getPassword().equals(password)){
-                    sesion.iniciarSesion();
                     exito = true;
                     break;
                 }
             }
-        }while(exito);
+            if(exito == true){
+                sesion.iniciarSesion();
+                System.out.println("Sesion iniciada con exito");
+                break;
+            }else{
+                System.out.println("Datos incorrectos, intentelo de nuevo");
+            }
+        }while(!exito);
         return;
     }
     
