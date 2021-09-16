@@ -16,6 +16,22 @@ public class ModuloVentas
         this.usuario = usuario;
     }
     
+    public void cambiarNombreTienda(){
+        sc.nextLine();
+        System.out.println("Escribé el nuevo nombre de tu tienda");
+        String nombreTienda = sc.nextLine();
+        Tienda tienda = usuario.getTienda();
+        tienda.setNombreTienda(nombreTienda);
+        System.out.println("Nombre Cambiado con exito");
+        try {
+            //Ponemos a "Dormir" el programa durante los ms que queremos
+            Thread.sleep(2*1000);
+         } catch (Exception e) {
+            System.out.println(e);
+         }
+        return;
+    }
+    
     public void MenuPrincipalVentas(){
         int opcion = 0;
         do{
@@ -33,7 +49,7 @@ public class ModuloVentas
                 switch(opcion)
                 {
                     case 1:
-                        System.out.println("Mantenimiento");
+                        cambiarNombreTienda();
                         break;
                     case 2:
                         System.out.println("Mantenimiento");
