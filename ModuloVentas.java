@@ -15,7 +15,7 @@ public class ModuloVentas
         this.dt = dt;
         this.usuario = usuario;
     }
-    
+
     public void cambiarNombreTienda(){
         sc.nextLine();
         System.out.println("Escribé el nuevo nombre de tu tienda");
@@ -26,12 +26,58 @@ public class ModuloVentas
         try {
             //Ponemos a "Dormir" el programa durante los ms que queremos
             Thread.sleep(2*1000);
-         } catch (Exception e) {
+        } catch (Exception e) {
             System.out.println(e);
-         }
+        }
         return;
     }
-    
+
+    public void verProducto(Producto producto){
+        int opcion;
+        producto.mostrarProducto();
+        System.out.println("1. Agregar al carrito de compras");
+        System.out.println("2. Volver a la sección anterior");
+        /*opcion = sc.nextInt();
+        if(opcion == 1)
+        agregarAlCarrito(producto);*/
+        return;
+    }
+
+    public void AbrirSeccion(Seccion seccion){
+        int opcion;
+        do{
+            System.out.println("---"+seccion.getNombre()+"---");
+            System.out.println();
+            seccion.listarSeccion();
+            System.out.println();
+            System.out.print("Digite el número de sección para entrar,\no cualquier otra valor para salir  ");
+            opcion = sc.nextInt();
+            opcion = opcion -1;
+            if(opcion>=0 && opcion<seccion.getCantidadProductos()){
+                verProducto(seccion.getProductos().get(opcion));
+                continue;
+            }
+            break;
+        }while(true);
+    }
+
+    public void VerSecciones(){
+        int opcion = 0;
+        do{
+            System.out.println("");
+            usuario.getTienda().ListarSecciones();
+            System.out.print("Digite el número de sección para entrar,\no cualquier otra valor para salir  ");
+
+            opcion = sc.nextInt();
+            opcion = opcion -1;
+            if(opcion>=0 && opcion<usuario.getTienda().getCantidadSecciones()){
+                AbrirSeccion(usuario.getTienda().getSecciones().get(opcion));
+                continue;
+            }
+            break;
+        }while(true);
+    }
+
     public void MenuPrincipalVentas(){
         int opcion = 0;
         do{
@@ -42,7 +88,7 @@ public class ModuloVentas
                 System.out.println("Hola de nuevo! "+ usuario.getTienda().getNombreTienda());
                 System.out.println("");
                 System.out.println("1. Cambiar nombre de mi tienda");
-                System.out.println("2. Editar Secciones");
+                System.out.println("2. Ver mis Secciones");
                 System.out.println("3. Vender");
                 System.out.println("4. Volver a menu principal");
                 opcion = sc.nextInt();
@@ -52,7 +98,7 @@ public class ModuloVentas
                         cambiarNombreTienda();
                         break;
                     case 2:
-                        System.out.println("Mantenimiento");
+                        VerSecciones();
                         break;   
                     case 3:
                         System.out.println("Mantenimiento");
@@ -66,7 +112,7 @@ public class ModuloVentas
                 }
             }
             else{
-                
+
                 System.out.println("Aun no tienes una tienda! vamos a crearla lml");
                 System.out.println("Escribé el nombre de ti tienda");
                 String nombreTienda = sc.nextLine();

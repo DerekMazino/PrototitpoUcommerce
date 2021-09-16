@@ -49,7 +49,7 @@ public class ModuloCompras
             System.out.println();
             seccion.listarSeccion();
             System.out.println();
-            System.out.print("Digite el número de sección para entrar,\no cualquier otra valor para salir  ");
+            System.out.print("Digite el número de producto para entrar,\no cualquier otra valor para salir  ");
             opcion = sc.nextInt();
             opcion = opcion -1;
             if(opcion>=0 && opcion<seccion.getCantidadProductos()){
