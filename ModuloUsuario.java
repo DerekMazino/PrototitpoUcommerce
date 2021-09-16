@@ -11,10 +11,11 @@ public class ModuloUsuario
     DataSource dt;
     Sesion sesion;
     static Scanner sc = new Scanner(System.in);
-    Usuario u = new Usuario();
-    public ModuloUsuario(DataSource dt, Sesion sesion){
+    Usuario usuario;
+    public ModuloUsuario(DataSource dt, Sesion sesion, Usuario usuario){
         this.dt = dt;
         this.sesion = sesion;
+        this.usuario = usuario;
     }
 
     public void RegistroUsuario(){
@@ -50,7 +51,7 @@ public class ModuloUsuario
             String password = sc.nextLine();
             for(Usuario usuario: dt.getUsuarios()){
                 if(usuario.getCodigo().equals(identificacion) && usuario.getPassword().equals(password)){
-                    u = usuario;
+                    this.usuario = usuario;
                     exito = true;
                     break;
                 }
@@ -69,7 +70,7 @@ public class ModuloUsuario
     
     public void MostrarPerfilUsuario(){
         System.out.println("");
-        System.out.println(u);
+        System.out.println(usuario);
         System.out.println("");
         try {
             //Ponemos a "Dormir" el programa durante los ms que queremos

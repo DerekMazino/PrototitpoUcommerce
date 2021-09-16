@@ -1,7 +1,7 @@
 #BlueJ class context
 comment0.target=ModuloUsuario
-comment1.params=dt\ sesion
-comment1.target=ModuloUsuario(DataSource,\ Sesion)
+comment1.params=dt\ sesion\ usuario
+comment1.target=ModuloUsuario(DataSource,\ Sesion,\ Usuario)
 comment2.params=
 comment2.target=void\ RegistroUsuario()
 comment3.params=

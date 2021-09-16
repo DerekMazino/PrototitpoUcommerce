@@ -14,10 +14,10 @@ public abstract class main
     {   
         DataSource dt = new DataSource();
         Sesion si = new Sesion();
-        
+        Usuario u = new Usuario();
         ModuloCompras mc = new ModuloCompras(dt);
         ModuloVentas mv = new ModuloVentas();
-        ModuloUsuario mu = new ModuloUsuario(dt, si);
+        ModuloUsuario mu = new ModuloUsuario(dt, si, u);
         
         int opcion;
         do
