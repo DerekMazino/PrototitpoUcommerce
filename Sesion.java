@@ -17,7 +17,7 @@ public class Sesion
     }
     
     public void cerrarSesion(){
-        this.logueado = true;
+        this.logueado = false;
     }
     
     public boolean getSesionStatus(){

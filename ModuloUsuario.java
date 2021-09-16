@@ -51,7 +51,7 @@ public class ModuloUsuario
             String password = sc.nextLine();
             for(Usuario usuario: dt.getUsuarios()){
                 if(usuario.getCodigo().equals(identificacion) && usuario.getPassword().equals(password)){
-                    this.usuario = usuario;
+                    //this.usuario = usuario;
                     exito = true;
                     break;
                 }
@@ -85,7 +85,7 @@ public class ModuloUsuario
         if(usuario.isRol()){
             System.out.println("Ya eres vendedor! Regresa al menu principal");
         }else{
-            this.usuario.cambiarRol(true);
+            usuario.cambiarRol(true);
             System.out.println("Ahora eres vendedor! Regresa al menu principal:" + usuario.isRol());
         }
         return;
