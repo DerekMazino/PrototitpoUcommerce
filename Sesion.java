@@ -7,16 +7,20 @@
  */
 public class Sesion
 {
-    private Usuario usuario;
-    private boolean logueado = false;
+    private boolean logueado;
     public Sesion(){
+        this.logueado = false;
+    }
+    
+    public void iniciarSesion(){
         this.logueado = true;
     }
     
-    public Usuario iniciarSesion(String identificacion, String contraseña){
-        return null;
+    public void cerrarSesion(){
+        this.logueado = true;
     }
     
-    public void cerrarSesion(Usuario usuario){
+    public boolean getSesionStatus(){
+        return this.logueado;
     }
 }

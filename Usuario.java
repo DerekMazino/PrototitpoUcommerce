@@ -16,7 +16,7 @@ public class Usuario {
     //private int cc;
     private String email;
     private String celular;
-    private char genero;
+    //private char genero;
     private boolean rol;//Si es 0, solo es cliente, si es 1, es ambos
     private double puntuacionCliente;
     private double puntuacionVendedor;
@@ -25,7 +25,7 @@ public class Usuario {
     public Usuario(){
     }
     
-    public Usuario(String nombre, String apellido, String codigo, String email, String celular, char genero, String password) {
+    public Usuario(String nombre, String apellido, String codigo, String email, String celular, String password) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.codigo = codigo;
@@ -33,7 +33,7 @@ public class Usuario {
         this.email = email;
         this.celular = celular;
         this.rol = false;
-        this.genero = genero;
+        //this.genero = genero;
         puntuacionCliente = 0;
         puntuacionVendedor = 0;
     }
@@ -94,7 +94,8 @@ public class Usuario {
         if(!this.rol)
             this.rol = true;
     }
-
+    
+    
     public Tienda getTienda() {
         if(this.tienda != null)
             return tienda;  

@@ -28,11 +28,15 @@ public class DataSource
         return this.usuarios;
     }
     
+    public void registarUsuario(Usuario usuario){
+        this.usuarios.add(usuario);
+    }
+    
     public void insertarDatosUcommerce()
     {  
         //Usuarios Vendedores String nombre, String apellido, int codigo, String email, long celular, char genero, String password
-        Usuario usuario1 = new Usuario("Camilo", "Marín", "2172368", "juan2172368@gmail.com", "3123731199", 'M', "123456");
-        Usuario usuario2 = new Usuario("Alejandra", "Estevez", "2175345", "maria2175345@gmail.com", "3172139828", 'F', "123456");
+        Usuario usuario1 = new Usuario("Camilo", "Marín", "2172969", "juan2172368@gmail.com", "3123731199", "123456");
+        Usuario usuario2 = new Usuario("Alejandra", "Estevez", "2175345", "maria2175345@gmail.com", "3172139828", "123456");
         usuarios.add(usuario1);
         usuarios.add(usuario2);
         //Tiendas de cada usuario vendendor

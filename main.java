@@ -13,9 +13,11 @@ public abstract class main
     public static void main(String[] args)
     {   
         DataSource dt = new DataSource();
+        Sesion si = new Sesion();
+        
         ModuloCompras mc = new ModuloCompras(dt);
         ModuloVentas mv = new ModuloVentas();
-        ModuloUsuario mu = new ModuloUsuario();
+        ModuloUsuario mu = new ModuloUsuario(dt, si);
         
         int opcion;
         do
@@ -37,13 +39,14 @@ public abstract class main
                     System.out.print("Mantenimiento...");
                     break;   
                 case 3:
-                    System.out.print("Mantenimiento...");
+                    mu.MenuUsuario();
                     break; 
                 case 4:
                     System.out.println("\n¡ADIOS!");
                     break;
                 default:
-
+                    System.out.println("Opcion invalida, intentalo de nuevo");
+                    break;
             }
         }while(opcion!=4);
         
