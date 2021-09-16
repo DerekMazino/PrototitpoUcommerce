@@ -11,33 +11,29 @@ public class ModuloUsuario
     DataSource dt;
     Sesion sesion;
     static Scanner sc = new Scanner(System.in);
+    Usuario u = new Usuario();
     public ModuloUsuario(DataSource dt, Sesion sesion){
         this.dt = dt;
         this.sesion = sesion;
     }
 
     public void RegistroUsuario(){
+        sc.nextLine();
         Usuario usuarioNuevo = new Usuario();
         System.out.println("REGISTRO DE USUARIO!");
         System.out.println("");
         System.out.println("Nombre:");
         usuarioNuevo.setNombre(sc.nextLine());
-        sc.nextLine();
         System.out.println("Apellido:");
         usuarioNuevo.setApellido(sc.nextLine());
-        sc.nextLine();
         System.out.println("Email:");
         usuarioNuevo.setEmail(sc.nextLine());
-        sc.nextLine();
         System.out.println("Celular:");
         usuarioNuevo.setCelular(sc.nextLine());
-        sc.nextLine();
         System.out.println("Identificacion:");
         usuarioNuevo.setCodigo(sc.nextLine());
-        sc.nextLine();
         System.out.println("Contraseña:");
         usuarioNuevo.setPassword(sc.nextLine());
-        sc.nextLine();
         dt.registarUsuario(usuarioNuevo);
         return;
     }
@@ -52,10 +48,9 @@ public class ModuloUsuario
             String identificacion = sc.nextLine();
             System.out.println("Digite su contraseña");
             String password = sc.nextLine();
-            System.out.println("Datos Ingresados: "+ identificacion +" " +password);
             for(Usuario usuario: dt.getUsuarios()){
-                System.out.println("Datos en dt: "+ usuario.getCodigo()+ " "+ usuario.getPassword());
                 if(usuario.getCodigo().equals(identificacion) && usuario.getPassword().equals(password)){
+                    u = usuario;
                     exito = true;
                     break;
                 }
@@ -71,11 +66,26 @@ public class ModuloUsuario
         return;
     }
     
+    
+    public void MostrarPerfilUsuario(){
+        System.out.println("");
+        System.out.println(u);
+        System.out.println("");
+        try {
+            //Ponemos a "Dormir" el programa durante los ms que queremos
+            Thread.sleep(3*1000);
+         } catch (Exception e) {
+            System.out.println(e);
+         }
+        return;
+    }
+    
     public void MenuUsuario(){
         int opcion = 0;
         do{
+            System.out.println("");
             System.out.println("U-Commerce: Modulo de Usuario");
-
+            System.out.println("");
             if(sesion.getSesionStatus()){
                 System.out.println("1. Ver perfil de usuario");
                 System.out.println("2. Pasar a Vendedor");
@@ -83,7 +93,7 @@ public class ModuloUsuario
                 opcion = sc.nextInt();
                 switch(opcion){
                     case 1:
-                        System.out.println("Mantenimiento");
+                        MostrarPerfilUsuario();
                         break;
                     case 2:
                         System.out.println("Mantenimiento");

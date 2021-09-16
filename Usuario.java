@@ -21,10 +21,10 @@ public class Usuario {
     private double puntuacionCliente;
     private double puntuacionVendedor;
     private Tienda tienda;
-    
+
     public Usuario(){
     }
-    
+
     public Usuario(String nombre, String apellido, String codigo, String email, String celular, String password) {
         this.nombre = nombre;
         this.apellido = apellido;
@@ -61,7 +61,7 @@ public class Usuario {
     public void setCodigo(String codigo) {
         this.codigo = codigo;
     }
-    
+
     public String getPassword() {
         return password;
     }
@@ -94,8 +94,7 @@ public class Usuario {
         if(!this.rol)
             this.rol = true;
     }
-    
-    
+
     public Tienda getTienda() {
         if(this.tienda != null)
             return tienda;  
@@ -106,16 +105,19 @@ public class Usuario {
     public void setTienda(Tienda tienda) {
         this.tienda = tienda;
     }
-    
+
     public ArrayList<Object> historialCompras(){
-        
+
         return null;
     }
-    
+
     public ArrayList<Object> historialVentas(){
-        
+
         return null;
     }
-    
-    
+
+    @Override
+    public String toString() {
+        return "Nombre=" + nombre + "\nApellido=" + apellido + "\nIdentificación=" + codigo + "\nEmail=" + email + "\nCelular=" + celular + ", Puntuacion de Cliente=" + puntuacionCliente + "\nPuntuacionVendedor=" + puntuacionVendedor;
+    }
 }
