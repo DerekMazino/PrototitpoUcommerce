@@ -1,8 +1,8 @@
 #BlueJ class context
 comment0.target=Servicio
 comment0.text=\n\ Write\ a\ description\ of\ class\ Servicio\ here.\n\ \n\ @author\ (Camilo\ Marin,\ Deyci\ Toloza)\ \n\ @version\ (Version\ 1.0)\n
-comment1.params=cupos\ costoPorCupo\ nombre\ descripcion\ categoria
-comment1.target=Servicio(int,\ double,\ java.lang.String,\ java.lang.String,\ Categoria)
+comment1.params=nombre\ descripcion\ categoria\ cupos\ costoPorCupo
+comment1.target=Servicio(java.lang.String,\ java.lang.String,\ Categoria,\ int,\ double)
 comment2.params=cupos\ costoPorCupo\ nombre\ descripcion\ categoria\ imagen
 comment2.target=Servicio(int,\ double,\ java.lang.String,\ java.lang.String,\ Categoria,\ java.lang.String[])
 comment3.params=

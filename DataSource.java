@@ -15,7 +15,7 @@ public class DataSource
     
     private ArrayList<Tienda> tiendas = new ArrayList<Tienda>();
     private ArrayList<Usuario> usuarios = new ArrayList<Usuario>();
-    
+    private ArrayList<Categoria> categorias = new ArrayList<Categoria>();
     public DataSource(){
         insertarDatosUcommerce();
     }
@@ -26,6 +26,10 @@ public class DataSource
     
     public ArrayList<Usuario> getUsuarios(){
         return this.usuarios;
+    }
+    
+    public ArrayList<Categoria> getCategorias(){
+        return this.categorias;
     }
     
     public void registarUsuario(Usuario usuario){
@@ -69,6 +73,8 @@ public class DataSource
         //Categorias
         Categoria c1 = new Categoria("Reposteria", "Productos de Reposteria, tortas, galletas, brownies, etc");
         Categoria c2 = new Categoria("Moda y Accesorios", "Productos como ropa, collares, pulseras, etc");
+        categorias.add(c1);
+        categorias.add(c2);
         //Crear Productos para cada tienda
         //Productos Tienda 1
         Producto p1 = new Regular("Galletas Rojas!", "Galletas red velvet con chispas de chocolate",c1 , 150, 1200);

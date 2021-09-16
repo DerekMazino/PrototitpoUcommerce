@@ -10,7 +10,7 @@ public class Servicio extends Producto{
     private int cupos;
     private double costoPorCupo;
 
-    public Servicio(int cupos, double costoPorCupo, String nombre, String descripcion, Categoria categoria) {
+    public Servicio(String nombre, String descripcion, Categoria categoria, int cupos, double costoPorCupo) {
         super(nombre, descripcion, categoria);
         this.cupos = cupos;
         this.costoPorCupo = costoPorCupo;
