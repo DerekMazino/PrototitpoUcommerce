@@ -82,7 +82,13 @@ public class ModuloUsuario
     }
     
     public void PasarModoVendedor(){
-        
+        if(usuario.isRol()){
+            System.out.println("Ya eres vendedor! Regresa al menu principal");
+        }else{
+            this.usuario.cambiarRol(true);
+            System.out.println("Ahora eres vendedor! Regresa al menu principal:" + usuario.isRol());
+        }
+        return;
     }
     
     public void MenuUsuario(){
@@ -101,7 +107,7 @@ public class ModuloUsuario
                         MostrarPerfilUsuario();
                         break;
                     case 2:
-                        System.out.println("Mantenimiento");
+                        PasarModoVendedor();
                         break;
                     case 3:
                         System.out.println("Regresando...");

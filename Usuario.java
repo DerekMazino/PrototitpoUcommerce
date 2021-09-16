@@ -23,6 +23,9 @@ public class Usuario {
     private Tienda tienda;
 
     public Usuario(){
+        this.rol = false;
+        puntuacionCliente = 0;
+        puntuacionVendedor = 0;
     }
 
     public Usuario(String nombre, String apellido, String codigo, String email, String celular, String password) {
@@ -87,12 +90,11 @@ public class Usuario {
     }
 
     public boolean isRol() {
-        return rol;
+        return this.rol;
     }
 
-    public void cambiarRol() {
-        if(!this.rol)
-            this.rol = true;
+    public void cambiarRol(boolean rol) {
+        this.rol = rol;
     }
 
     public Tienda getTienda() {
@@ -118,6 +120,6 @@ public class Usuario {
 
     @Override
     public String toString() {
-        return "Nombre=" + nombre + "\nApellido=" + apellido + "\nIdentificación=" + codigo + "\nEmail=" + email + "\nCelular=" + celular + ", Puntuacion de Cliente=" + puntuacionCliente + "\nPuntuacionVendedor=" + puntuacionVendedor;
+        return "Nombre=" + nombre + "\nApellido=" + apellido + "\nIdentificación=" + codigo + "\nEmail=" + email + "\nCelular=" + celular + "\nPuntuacion de Cliente=" + puntuacionCliente + "\nPuntuacionVendedor=" + puntuacionVendedor;
     }
 }
