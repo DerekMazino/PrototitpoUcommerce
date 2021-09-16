@@ -23,4 +23,5 @@ public class Sesion
     public boolean getSesionStatus(){
         return this.logueado;
     }
+    
 }

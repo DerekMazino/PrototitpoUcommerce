@@ -21,9 +21,9 @@ public abstract class main
         
         int opcion = 0;
         do
-        {   System.out.println("Rol de usuario: "+u.isRol());
-            //System.out.println("Datos usuario\n: "+u);
-            System.out.println("Sesion de usuario: "+si.getSesionStatus());
+        {   /*System.out.println("Rol de usuario: "+u.isRol());
+            System.out.println("Datos usuario\n: "+u);
+            System.out.println("Sesion de usuario: "+si.getSesionStatus());*/
             if(u.isRol()){
                 System.out.println("\nU-COMMERCE!!!");
                 System.out.println("\nMENU DE OPCIONES");

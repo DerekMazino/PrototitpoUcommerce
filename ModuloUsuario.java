@@ -39,6 +39,19 @@ public class ModuloUsuario
         return;
     }
     
+    public void cargarDatosSesion(Usuario usuario){
+        this.usuario.setNombre(usuario.getNombre());
+        this.usuario.setApellido(usuario.getApellido());
+        this.usuario.setCodigo(usuario.getCodigo());
+        this.usuario.setEmail(usuario.getEmail());
+        this.usuario.setCelular(usuario.getCelular());
+        this.usuario.setPassword(usuario.getPassword());
+        this.usuario.cambiarRol(usuario.isRol());
+        this.usuario.setPuntuacionCliente(usuario.getPuntuacionCliente());
+        this.usuario.setPuntuacionVendedor(usuario.getPuntuacionVendedor());
+        this.usuario.setTienda(usuario.getTienda());
+    }
+    
     public void IniciarSesion(){
         boolean exito = false;
         
@@ -53,6 +66,7 @@ public class ModuloUsuario
                 if(usuario.getCodigo().equals(identificacion) && usuario.getPassword().equals(password)){
                     //this.usuario = usuario;
                     exito = true;
+                    cargarDatosSesion(usuario);
                     break;
                 }
             }
@@ -86,7 +100,7 @@ public class ModuloUsuario
             System.out.println("Ya eres vendedor! Regresa al menu principal");
         }else{
             usuario.cambiarRol(true);
-            System.out.println("Ahora eres vendedor! Regresa al menu principal:" + usuario.isRol());
+            System.out.println("Ahora eres vendedor! Regresa al menu principal:");
         }
         return;
     }

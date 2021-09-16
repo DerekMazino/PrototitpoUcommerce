@@ -117,7 +117,23 @@ public class Usuario {
 
         return null;
     }
+    
+    public double getPuntuacionCliente() {
+        return puntuacionCliente;
+    }
 
+    public void setPuntuacionCliente(double puntuacionCliente) {
+        this.puntuacionCliente = puntuacionCliente;
+    }
+
+    public double getPuntuacionVendedor() {
+        return puntuacionVendedor;
+    }
+
+    public void setPuntuacionVendedor(double puntuacionVendedor) {
+        this.puntuacionVendedor = puntuacionVendedor;
+    }
+    
     @Override
     public String toString() {
         return "Nombre=" + nombre + "\nApellido=" + apellido + "\nIdentificación=" + codigo + "\nEmail=" + email + "\nCelular=" + celular + "\nPuntuacion de Cliente=" + puntuacionCliente + "\nPuntuacionVendedor=" + puntuacionVendedor;
