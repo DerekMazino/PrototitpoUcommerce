@@ -70,12 +70,18 @@ public class ModuloCompras
             System.out.println("Mira nuestras Secciones");
             tienda.ListarSecciones();
             System.out.print("Digite el número de sección para entrar\n");
+            if(carrito.getCarrito().size()>0){
+                int valor = tienda.getCantidadSecciones() +1;
+                System.out.println("Digite "+valor+" para entrar al carrito de compras");
+            }
             System.out.print("o cualquier otra valor para salir");
             opcion = sc.nextInt();
             opcion = opcion - 1;
             if(opcion>=0 && opcion<tienda.getCantidadSecciones()){
                 verSeccion(tienda.getSecciones().get(opcion));
                 continue;
+            }else if(opcion == 4){
+                carrito.mostrarCarrito();
             }
             break;
         }while(true);

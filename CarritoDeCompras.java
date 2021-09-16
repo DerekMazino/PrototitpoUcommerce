@@ -44,5 +44,11 @@ public class CarritoDeCompras {
     public int getCantidadProductos(){
         return productos.size();
     }
+    
+    public void mostrarCarrito(){
+        for(Producto producto: productos.keySet()){
+            System.out.println("key: " + producto.getNombre() + " Cantidad: " + productos.get(producto));
+        }
+    }
 }
 
