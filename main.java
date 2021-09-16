@@ -2,8 +2,8 @@
 /**
  * Write a description of class main here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author (Camilo Marín - Deyci Toloza) 
+ * @version (Version 1.0.1)
  */
 import java.util.Scanner;
 public abstract class main
@@ -15,8 +15,8 @@ public abstract class main
         DataSource dt = new DataSource();
         Sesion si = new Sesion();
         Usuario u = new Usuario();
-        ModuloCompras mc = new ModuloCompras(dt);
-        ModuloVentas mv = new ModuloVentas();
+        ModuloCompras mc = new ModuloCompras(dt, u);
+        ModuloVentas mv = new ModuloVentas(dt, u);
         ModuloUsuario mu = new ModuloUsuario(dt, si, u);
         
         int opcion = 0;

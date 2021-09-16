@@ -15,11 +15,12 @@ public class ModuloCompras
 {
     static Scanner sc = new Scanner(System.in);
     private CarritoDeCompras carrito;
-    private Usuario usuario = new Usuario();
+    private Usuario usuario;
     private DataSource dt;
     
-    public ModuloCompras(DataSource dt){
+    public ModuloCompras(DataSource dt, Usuario usuario){
         this.dt = dt;
+        this.usuario = usuario;
     }
     
     public void agregarAlCarrito(Producto producto){

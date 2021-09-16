@@ -1,7 +1,7 @@
 #BlueJ class context
 comment0.target=ModuloCompras
-comment1.params=dt
-comment1.target=ModuloCompras(DataSource)
+comment1.params=dt\ usuario
+comment1.target=ModuloCompras(DataSource,\ Usuario)
 comment2.params=producto
 comment2.target=void\ agregarAlCarrito(Producto)
 comment3.params=producto
