@@ -97,7 +97,7 @@ public class ModuloVentas
             break;
         }while(true);
     }
-    
+
     public Categoria obtenerCategoria(){
         int index = 0;
         System.out.println("Elije la categoria");
@@ -108,7 +108,7 @@ public class ModuloVentas
         int op = sc.nextInt();
         return dt.getCategorias().get(op);
     }
-    
+
     public boolean indicarEstado(){
         int opcion;
         boolean retorno = false;
@@ -124,7 +124,45 @@ public class ModuloVentas
         }
         return retorno;
     }
-    
+
+    public void agregarASeccion(Producto producto, int opcion){
+        System.out.println("");
+        if(opcion == 3){
+            Seccion seccion = usuario.getTienda().buscarSeccion("Mis Clasificados");
+            if(seccion != null){
+                seccion.agregarProducto(producto);
+                return;
+            }
+            Seccion nuevaSeccion = new Seccion("Mis Clasificados");
+            usuario.getTienda().añadirSeccion(nuevaSeccion);
+            nuevaSeccion.agregarProducto(producto);
+            return;
+        }
+        do{
+            System.out.println("");
+            usuario.getTienda().ListarSecciones();
+            System.out.println("Indica la sección donde deseas agregar el producto");
+            System.out.println("o marca "+usuario.getTienda().getCantidadSecciones() +" para crear una nueva seccion");
+            System.out.println("Cualquier otro valor para salir");
+            opcion = sc.nextInt();
+            opcion = opcion -1;
+            if(opcion>=0 && opcion<usuario.getTienda().getCantidadSecciones()){
+                usuario.getTienda().getSecciones().get(opcion).agregarProducto(producto);
+                return;
+            }else if(opcion+1 == usuario.getTienda().getCantidadSecciones()){
+                System.out.println("Escribe el nombre de la nueva seccion");
+                String nuevoS = sc.nextLine();
+                Seccion nuevaSeccion = new Seccion(nuevoS);
+                usuario.getTienda().añadirSeccion(nuevaSeccion);
+                nuevaSeccion.agregarProducto(producto);
+                return;
+            }
+            break;
+        }while(true);
+
+        int opcion1 = sc.nextInt();
+    }
+
     public void vender(){
         int opcion;
         sc.nextLine();
@@ -149,7 +187,8 @@ public class ModuloVentas
                 System.out.println("Precio Unitario:");
                 double precioUnitario = sc.nextDouble();
                 Regular regular = new Regular(nombre, descripcion, categoria, stock, precioUnitario);
-                System.out.println("Mantenimiento");
+                agregarASeccion(regular, opcion);
+                System.out.println("Producto creado Correctamente");
                 break;
             case 2:
                 System.out.println("Cupos:");
@@ -157,14 +196,16 @@ public class ModuloVentas
                 System.out.println("Costo por Cupo:");
                 double precioCupo = sc.nextDouble();
                 Servicio servicio = new Servicio(nombre, descripcion, categoria, cupo, precioCupo);
-                System.out.println("Mantenimiento");
+                agregarASeccion(servicio, opcion);
+                System.out.println("Servicio creado Correctamente");
                 break;   
             case 3:
                 System.out.println("Precio:");
                 double precio = sc.nextDouble();
                 boolean estado = indicarEstado();
                 Clasificado clasificado = new Clasificado(nombre, descripcion, categoria, precio, estado);
-                System.out.println("Mantenimiento");
+                agregarASeccion(clasificado, opcion);
+                System.out.println("Clasificado creado Correctamente");
                 break; 
             case 4:
                 System.out.println("\n¡ADIOS!");
