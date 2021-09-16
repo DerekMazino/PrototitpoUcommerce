@@ -106,7 +106,7 @@ public class ModuloVentas
             System.out.println(index+". "+categoria.getNombre());
         }
         int op = sc.nextInt();
-        return dt.getCategorias().get(op);
+        return dt.getCategorias().get(op-1);
     }
 
     public boolean indicarEstado(){
