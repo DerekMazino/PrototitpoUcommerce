@@ -15,7 +15,16 @@ public class ModuloVentas
         this.dt = dt;
         this.usuario = usuario;
     }
-
+    
+    public void tiempo(){
+        try {
+            //Ponemos a "Dormir" el programa durante los ms que queremos
+            Thread.sleep(2*1000);
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
+    
     public void cambiarNombreTienda(){
         sc.nextLine();
         System.out.println("Escribé el nuevo nombre de tu tienda");
@@ -23,32 +32,45 @@ public class ModuloVentas
         Tienda tienda = usuario.getTienda();
         tienda.setNombreTienda(nombreTienda);
         System.out.println("Nombre Cambiado con exito");
-        try {
-            //Ponemos a "Dormir" el programa durante los ms que queremos
-            Thread.sleep(2*1000);
-        } catch (Exception e) {
-            System.out.println(e);
-        }
+        tiempo();
         return;
     }
 
-    public void agregarUnidadesProducto(Regular regular){
-        System.out.println("Producto: "+regular.getNombre());
-        System.out.println("Stock Actual: "+regular.getStock());
+    public void agregarUnidadesProducto(Producto producto){
         System.out.println("");
+        System.out.println("Producto: "+producto.getNombre());
+        int cantidad;
+        if(producto instanceof Regular){
+            Regular regular = (Regular) producto;
+            System.out.println("Stock Actual: "+regular.getStock());
+            System.out.println("Digita la cantidad que deseas agregar");
+            cantidad = sc.nextInt();
+            regular.setStock(regular.getStock()+cantidad);
+        }else{
+            Servicio servicio = (Servicio) producto;
+            System.out.println("Stock Actual: "+servicio.getCupos());
+            System.out.println("Digita la cantidad que deseas agregar");
+            cantidad = sc.nextInt();
+            servicio.setCupos(servicio.getCupos()+cantidad);
+        }
+        System.out.println("Cantidad agregada correctamente");
     }
 
     public void verProducto(Producto producto){
         int opcion;
         producto.mostrarProducto();
-        System.out.println("1. Agregar más unidades");
+        if (producto instanceof Clasificado) {
+            tiempo();
+            return;
+        }
+        System.out.println("1. Agregar stock/cupos");
         System.out.println("2. Activar/Desactivar");
         System.out.println("3. Volver a la seccion");
         opcion = sc.nextInt();
         switch(opcion)
         {
             case 1:
-                System.out.println("Mantenimiento");
+                agregarUnidadesProducto(producto);
                 break;
             case 2:
                 System.out.println("Mantenimiento");
@@ -70,7 +92,7 @@ public class ModuloVentas
             System.out.println();
             seccion.listarSeccion();
             System.out.println();
-            System.out.print("Digite el número de sección para entrar,\no cualquier otra valor para salir  ");
+            System.out.print("Digite el número de producto para entrar,\no cualquier otra valor para salir  ");
             opcion = sc.nextInt();
             opcion = opcion -1;
             if(opcion>=0 && opcion<seccion.getCantidadProductos()){
