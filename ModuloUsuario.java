@@ -81,6 +81,10 @@ public class ModuloUsuario
         return;
     }
     
+    public void PasarModoVendedor(){
+        
+    }
+    
     public void MenuUsuario(){
         int opcion = 0;
         do{
