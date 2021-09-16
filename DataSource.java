@@ -42,6 +42,8 @@ public class DataSource
         //Tiendas de cada usuario vendendor
         Tienda tienda1 = new Tienda("Postres! lml");
         Tienda tienda2 = new Tienda("Ele-accesorios");
+        usuario1.cambiarRol(true);
+        usuario2.cambiarRol(true);
         tiendas.add(tienda1);
         tiendas.add(tienda2);
         //Relacionar cada tienda con su dueño

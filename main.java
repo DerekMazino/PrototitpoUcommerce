@@ -39,7 +39,7 @@ public abstract class main
                         mc.verTiendas();
                         break;
                     case 2:
-                        System.out.print("Mantenimiento...");
+                        mv.MenuPrincipalVentas();
                         break;   
                     case 3:
                         mu.MenuUsuario();

@@ -1,6 +1,7 @@
 #BlueJ class context
 comment0.target=ModuloVentas
-comment0.text=\n\ Write\ a\ description\ of\ class\ ModuloVentas\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
 comment1.params=dt\ usuario
 comment1.target=ModuloVentas(DataSource,\ Usuario)
-numComments=2
+comment2.params=
+comment2.target=void\ MenuPrincipalVentas()
+numComments=3
