@@ -1,17 +1,19 @@
 #BlueJ class context
 comment0.target=ModuloCompras
-comment1.params=dt\ usuario
-comment1.target=ModuloCompras(DataSource,\ Usuario)
+comment1.params=dt\ usuario\ sesion
+comment1.target=ModuloCompras(DataSource,\ Usuario,\ Sesion)
 comment2.params=producto
 comment2.target=void\ agregarAlCarrito(Producto)
 comment3.params=producto
 comment3.target=void\ verProducto(Producto)
 comment4.params=seccion
 comment4.target=void\ verSeccion(Seccion)
-comment5.params=tienda
-comment5.target=void\ verInformaci\u00F3nTienda(Tienda)
-comment6.params=
-comment6.target=void\ imprimirTiendas()
+comment5.params=
+comment5.target=void\ verCarrito()
+comment6.params=tienda
+comment6.target=void\ verInformaci\u00F3nTienda(Tienda)
 comment7.params=
-comment7.target=void\ verTiendas()
-numComments=8
+comment7.target=void\ imprimirTiendas()
+comment8.params=
+comment8.target=void\ verTiendas()
+numComments=9

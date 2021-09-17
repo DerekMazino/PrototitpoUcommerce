@@ -17,12 +17,13 @@ public class ModuloCompras
     private CarritoDeCompras carrito;
     private Usuario usuario;
     private DataSource dt;
-    
-    public ModuloCompras(DataSource dt, Usuario usuario){
+    private Sesion sesion;
+    public ModuloCompras(DataSource dt, Usuario usuario, Sesion sesion){
         this.dt = dt;
         this.usuario = usuario;
+        this.sesion = sesion;
     }
-    
+
     public void agregarAlCarrito(Producto producto){
         System.out.println("Digite la cantidad a agregar");
         Integer cantidad = sc.nextInt();
@@ -59,7 +60,39 @@ public class ModuloCompras
             break;
         }while(true);
     }
-    
+
+    public void verCarrito(){
+        int opcion = 0 ;
+        do{
+            System.out.println("");
+            carrito.mostrarCarrito();
+            System.out.println("1. Completar compra");
+            System.out.println("2. Borrar elemento del carrito");
+            System.out.println("3. Vaciar carrito");
+            System.out.println("4. Regresar al menu anterior");
+            opcion = sc.nextInt();
+            switch(opcion){
+                case 1:
+                    System.out.println("Mantenimiento");
+                    break;
+                case 2:
+                    System.out.println("Mantenimiento");
+                    break;
+                case 3:
+                    carrito.vaciarCarrito();
+                    System.out.println("El carrito ha sido limpiado");
+                    break;
+                case 4:
+                    System.out.println("Regresando...");
+                    break;
+                default:
+                    System.out.println("Error, intentalo de nuevo");
+                    break;
+            }
+        }while(opcion!=4);
+
+    }
+
     public void verInformaciónTienda(Tienda tienda){
         int opcion;
         carrito = new CarritoDeCompras(usuario, tienda);
@@ -73,15 +106,21 @@ public class ModuloCompras
             if(carrito.getCarrito().size()>0){
                 int valor = tienda.getCantidadSecciones() +1;
                 System.out.println("Digite "+valor+" para entrar al carrito de compras");
+                
             }
-            System.out.print("o cualquier otra valor para salir");
+            System.out.println("o cualquier otra valor para salir");
             opcion = sc.nextInt();
             opcion = opcion - 1;
             if(opcion>=0 && opcion<tienda.getCantidadSecciones()){
                 verSeccion(tienda.getSecciones().get(opcion));
                 continue;
-            }else if(opcion == 4){
-                carrito.mostrarCarrito();
+            }else if(opcion == 4 && carrito.getCarrito().size()>0){
+                if(sesion.getSesionStatus()){
+                    verCarrito();    
+                }
+                System.out.println("");
+                System.out.println("Debes estar logueado para continuar con esta actividad");
+                continue;
             }
             break;
         }while(true);

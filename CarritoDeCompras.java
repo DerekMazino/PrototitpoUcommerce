@@ -33,7 +33,7 @@ public class CarritoDeCompras {
         this.productos.remove(producto);
     }
 
-    public void vaciarCarrito(Producto producto){
+    public void vaciarCarrito(){
         this.productos.clear();
     }
 
@@ -46,8 +46,10 @@ public class CarritoDeCompras {
     }
     
     public void mostrarCarrito(){
+        int index = 0;
         for(Producto producto: productos.keySet()){
-            System.out.println("key: " + producto.getNombre() + " Cantidad: " + productos.get(producto));
+            index++;
+            System.out.println(index+"1. " + producto.getNombre() + " Cantidad: " + productos.get(producto));
         }
     }
 }

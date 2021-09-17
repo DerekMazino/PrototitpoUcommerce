@@ -15,7 +15,7 @@ public abstract class main
         DataSource dt = new DataSource();
         Sesion si = new Sesion();
         Usuario u = new Usuario();
-        ModuloCompras mc = new ModuloCompras(dt, u);
+        ModuloCompras mc = new ModuloCompras(dt, u, si);
         ModuloVentas mv = new ModuloVentas(dt, u);
         ModuloUsuario mu = new ModuloUsuario(dt, si, u);
         
