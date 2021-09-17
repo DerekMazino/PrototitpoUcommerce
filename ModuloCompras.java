@@ -107,6 +107,7 @@ public class ModuloCompras
             switch(opcion){
                 case 1:
                     completarCompra();
+                    opcion = 4;
                     break;
                 case 2:
                     System.out.println("Mantenimiento");
@@ -123,7 +124,7 @@ public class ModuloCompras
                     break;
             }
         }while(opcion!=4);
-
+        return;
     }
 
     public void verInformaciónTienda(Tienda tienda){
