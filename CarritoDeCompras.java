@@ -47,9 +47,27 @@ public class CarritoDeCompras {
     
     public void mostrarCarrito(){
         int index = 0;
+        double total = 0;
         for(Producto producto: productos.keySet()){
             index++;
-            System.out.println(index+"1. " + producto.getNombre() + " Cantidad: " + productos.get(producto));
+            System.out.println(index);
+            System.out.print("Producto: " + producto.getNombre() + " Cantidad: " + productos.get(producto)+" ");
+            if(producto instanceof Clasificado){
+                Clasificado cl = (Clasificado) producto;
+                System.out.println("Precio: "+cl.getCosto());
+                total = total + cl.getCosto(); 
+            }else if(producto instanceof Regular){
+                Regular rl = (Regular) producto;
+                double subtotal = productos.get(producto) * rl.getPrecioUnitario();
+                System.out.println("Precio Unitario: "+rl.getPrecioUnitario() + "Subtotal: "+subtotal+"\n");
+                total = total + subtotal; 
+            }else{
+                Servicio sl = (Servicio) producto;
+                double subtotal = productos.get(producto) * sl.getCostoPorCupo();
+                System.out.println("Precio Unitario: "+sl.getCostoPorCupo() + "Subtotal: "+subtotal+"\n");
+                total = total + subtotal; 
+            }            
+            System.out.println("Total a pagar: "+ total);
         }
     }
 }
