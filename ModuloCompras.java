@@ -22,6 +22,16 @@ public class ModuloCompras
         this.dt = dt;
         this.usuario = usuario;
         this.sesion = sesion;
+
+    }
+
+    public void tiempo(){
+        try {
+            //Ponemos a "Dormir" el programa durante los ms que queremos
+            Thread.sleep(2*1000);
+        } catch (Exception e) {
+            System.out.println(e);
+        }
     }
 
     public void agregarAlCarrito(Producto producto){
@@ -61,11 +71,34 @@ public class ModuloCompras
         }while(true);
     }
 
+    public void completarCompra(){
+        System.out.println("");
+        System.out.println("Se notificará al vendedor de su intención de compra");
+        System.out.println("Será contactado por este en el menor tiempo posible");
+        for(Producto producto: carrito.getCarrito().keySet()){
+            if(!(producto instanceof Clasificado)){
+                if(producto instanceof Regular){
+                    Regular regular = (Regular) producto;
+                    regular.setStock(regular.getStock()-carrito.getCarrito().get(producto));
+                }else{
+                    Servicio servicio = (Servicio) producto;
+                    servicio.setCupos(servicio.getCupos()-carrito.getCarrito().get(producto));
+                }
+
+            }
+        }
+        carrito.vaciarCarrito();
+        System.out.println("Regresando...");
+        tiempo();
+    }
+
     public void verCarrito(){
         int opcion = 0 ;
         do{
             System.out.println("");
+            System.out.println("CARRITO DE COMPRAS");
             carrito.mostrarCarrito();
+            System.out.println("");
             System.out.println("1. Completar compra");
             System.out.println("2. Borrar elemento del carrito");
             System.out.println("3. Vaciar carrito");
@@ -73,7 +106,7 @@ public class ModuloCompras
             opcion = sc.nextInt();
             switch(opcion){
                 case 1:
-                    System.out.println("Mantenimiento");
+                    completarCompra();
                     break;
                 case 2:
                     System.out.println("Mantenimiento");
@@ -106,7 +139,7 @@ public class ModuloCompras
             if(carrito.getCarrito().size()>0){
                 int valor = tienda.getCantidadSecciones() +1;
                 System.out.println("Digite "+valor+" para entrar al carrito de compras");
-                
+
             }
             System.out.println("o cualquier otra valor para salir");
             opcion = sc.nextInt();
@@ -117,9 +150,12 @@ public class ModuloCompras
             }else if(opcion == 4 && carrito.getCarrito().size()>0){
                 if(sesion.getSesionStatus()){
                     verCarrito();    
+                    continue;
                 }
                 System.out.println("");
                 System.out.println("Debes estar logueado para continuar con esta actividad");
+                ModuloUsuario mu = new ModuloUsuario(dt, sesion, usuario);
+                mu.MenuUsuario();
                 continue;
             }
             break;

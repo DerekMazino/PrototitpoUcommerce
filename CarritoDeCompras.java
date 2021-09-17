@@ -19,7 +19,7 @@ public class CarritoDeCompras {
         this.tienda = tienda;
         productos = new HashMap<Producto, Integer>();
     }
-
+    
     public void agregarProducto(Producto producto, Integer nuevaCantidad){
         if(productos.containsKey(producto)){
             Integer cantidad = productos.get(producto) + nuevaCantidad;
