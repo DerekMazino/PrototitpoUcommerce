@@ -124,7 +124,7 @@ public class ModuloCompras
     }
 
     public void borrarElementoCarrito(){
-
+        
     }
 
     public void verCarrito(){
@@ -186,7 +186,7 @@ public class ModuloCompras
             if(opcion>=0 && opcion<tienda.getCantidadSecciones()){
                 verSeccion(tienda.getSecciones().get(opcion));
                 continue;
-            }else if(opcion == 4 && carrito.getCarrito().size()>0){
+            }else if(opcion == tienda.getCantidadSecciones() && carrito.getCarrito().size()>0){
                 if(sesion.getSesionStatus()){
                     verCarrito();    
                     continue;
