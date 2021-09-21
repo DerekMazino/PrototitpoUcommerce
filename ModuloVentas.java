@@ -274,7 +274,7 @@ public class ModuloVentas
             else{
 
                 System.out.println("Aun no tienes una tienda! vamos a crearla lml");
-                System.out.println("Escribé el nombre de ti tienda");
+                System.out.println("Escribé el nombre de tu tienda");
                 String nombreTienda = sc.nextLine();
                 Tienda nuevaTienda = new Tienda(nombreTienda);
                 usuario.setTienda(nuevaTienda);

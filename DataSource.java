@@ -52,7 +52,7 @@ public class DataSource
         tiendas.add(tienda2);
         //Relacionar cada tienda con su dueño
         usuario1.setTienda(tienda1);
-        usuario2.setTienda(tienda1);
+        usuario2.setTienda(tienda2);
         //Agregar Secciones para cada Tienda
         //Secciones Tienda 1
         Seccion s1 = new Seccion("Galletas");

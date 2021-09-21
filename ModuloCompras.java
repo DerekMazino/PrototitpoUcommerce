@@ -35,9 +35,40 @@ public class ModuloCompras
     }
 
     public void agregarAlCarrito(Producto producto){
-        System.out.println("Digite la cantidad a agregar");
-        Integer cantidad = sc.nextInt();
-        carrito.agregarProducto(producto, cantidad);
+        do{
+            int cantidad1 = 0;
+            Integer cantidad = 1;
+            if(!(producto instanceof Clasificado)){
+                System.out.println("Digite la cantidad a agregar");
+                cantidad = sc.nextInt();
+                if(producto instanceof Regular){
+                    Regular regular = (Regular) producto;
+                    cantidad1 = regular.getStock();
+                }else{
+                    Servicio servicio = (Servicio) producto;
+                    cantidad1 = servicio.getCupos();
+                }
+            }
+            else{
+                carrito.agregarProducto(producto, cantidad);
+                System.out.println("");
+                System.out.println("Elemento agregado con exito");
+                System.out.println("");
+                break;
+            }
+            if(cantidad>cantidad1){
+                System.out.println("");
+                System.out.println("Error! estas seleccionando más de la cantidad disponible");
+                System.out.println("Intentalo de nuevo");
+                System.out.println("");
+            }else{
+                carrito.agregarProducto(producto, cantidad);
+                System.out.println("");
+                System.out.println("Elemento agregado con exito");
+                System.out.println("");
+                break;
+            }
+        }while(true);
     }
 
     public void verProducto(Producto producto){
@@ -92,6 +123,10 @@ public class ModuloCompras
         tiempo();
     }
 
+    public void borrarElementoCarrito(){
+
+    }
+
     public void verCarrito(){
         int opcion = 0 ;
         do{
@@ -110,7 +145,10 @@ public class ModuloCompras
                     opcion = 4;
                     break;
                 case 2:
-                    System.out.println("Mantenimiento");
+                    System.out.println("Mantemiento");
+                    /*System.out.println("Indica el número del producto a eliminar");
+                    int valor = sc.nextInt();
+                    carrito.eliminarProducto(carrito.getCarrito().get(valor));*/
                     break;
                 case 3:
                     carrito.vaciarCarrito();
