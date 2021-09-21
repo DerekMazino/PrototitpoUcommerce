@@ -77,7 +77,6 @@ public class ModuloUsuario
     
     public void IniciarSesion(){
         boolean exito = false;
-        
         do{
             sc.nextLine();
             System.out.println("Hola!");
@@ -98,7 +97,8 @@ public class ModuloUsuario
                 System.out.println("Sesion iniciada con exito");
                 break;
             }else{
-                System.out.println("Datos incorrectos, intentelo de nuevo");
+                System.out.println("Datos incorrectos, será redirigido al menu de usuario");
+                break;
             }
         }while(!exito);
         return;

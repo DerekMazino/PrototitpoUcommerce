@@ -130,6 +130,7 @@ public class ModuloCompras
     public void verCarrito(){
         int opcion = 0 ;
         do{
+            if(carrito.getCantidadProductos() == 0){break;}
             System.out.println("");
             System.out.println("CARRITO DE COMPRAS");
             carrito.mostrarCarrito();
