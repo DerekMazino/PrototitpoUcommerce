@@ -17,7 +17,16 @@ public class ModuloUsuario
         this.sesion = sesion;
         this.usuario = usuario;
     }
-
+    
+    public boolean buscarUsuario(String identificacion){
+        for(Usuario usuario: dt.getUsuarios()){
+            if(usuario.getCodigo().equals(identificacion)){
+                return true;
+            }
+        }
+        return false;
+    }
+    
     public void RegistroUsuario(){
         sc.nextLine();
         Usuario usuarioNuevo = new Usuario();
@@ -31,10 +40,24 @@ public class ModuloUsuario
         usuarioNuevo.setEmail(sc.nextLine());
         System.out.println("Celular:");
         usuarioNuevo.setCelular(sc.nextLine());
-        System.out.println("Identificacion:");
-        usuarioNuevo.setCodigo(sc.nextLine());
+        while(true){
+            System.out.println("Identificacion:");
+            String identificacion = sc.nextLine();
+            if(!buscarUsuario(identificacion)){
+                usuarioNuevo.setCodigo(identificacion);
+                break;
+            }else{
+                System.out.println("");
+                System.out.println("Error, la identificación ya esta registrada:");
+                System.out.println("Digita una valida");
+            }
+        }
+        
         System.out.println("Contraseña:");
         usuarioNuevo.setPassword(sc.nextLine());
+        
+        
+        
         dt.registarUsuario(usuarioNuevo);
         return;
     }
