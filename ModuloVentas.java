@@ -163,15 +163,17 @@ public class ModuloVentas
         do{
             System.out.println("");
             usuario.getTienda().ListarSecciones();
+            int numero = usuario.getTienda().getCantidadSecciones() + 1;
             System.out.println("Indica la sección donde deseas agregar el producto");
-            System.out.println("o marca "+usuario.getTienda().getCantidadSecciones() +" para crear una nueva seccion");
+            System.out.println("o marca "+numero +" para crear una nueva seccion");
             System.out.println("Cualquier otro valor para salir");
             opcion = sc.nextInt();
             opcion = opcion -1;
             if(opcion>=0 && opcion<usuario.getTienda().getCantidadSecciones()){
                 usuario.getTienda().getSecciones().get(opcion).agregarProducto(producto);
                 return;
-            }else if(opcion+1 == usuario.getTienda().getCantidadSecciones()){
+            }else if(opcion+1 == numero){
+                sc.nextLine();
                 System.out.println("Escribe el nombre de la nueva seccion");
                 String nuevoS = sc.nextLine();
                 Seccion nuevaSeccion = new Seccion(nuevoS);
