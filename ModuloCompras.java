@@ -52,7 +52,7 @@ public class ModuloCompras
             else{
                 carrito.agregarProducto(producto, cantidad);
                 System.out.println("");
-                System.out.println("Elemento agregado con exito");
+                System.out.println("¡Elemento agregado con exito¡");
                 System.out.println("");
                 break;
             }

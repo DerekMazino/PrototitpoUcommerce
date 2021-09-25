@@ -32,18 +32,19 @@ public class ModuloUsuario
         Usuario usuarioNuevo = new Usuario();
         System.out.println("REGISTRO DE USUARIO!");
         System.out.println("");
-        System.out.println("-Escribe a continuación tu nombre solamente.-");
+        System.out.println("-Escribe a continuación tu nombre.-");
         System.out.println("Nombre:");
         usuarioNuevo.setNombre(sc.nextLine());
         System.out.println("-Ahora tu apellido.-");
         System.out.println("Apellido:");
         usuarioNuevo.setApellido(sc.nextLine());
-        System.out.println("-Tu Email-");
+        System.out.println("-Tu Email.-");
         System.out.println("Email:");
         usuarioNuevo.setEmail(sc.nextLine());
-        System.out.println("-Luego tu caelular-");
+        System.out.println("-Luego tu caelular.-");
         usuarioNuevo.setCelular(sc.nextLine());
         while(true){
+            System.out.println("");
             System.out.println("Identificacion:");
             String identificacion = sc.nextLine();
             if(!buscarUsuario(identificacion)){
