@@ -130,46 +130,49 @@ public class ModuloCompras
     }
 
     public void borrarElementoCarrito(){
-        
+
     }
 
-    public void verCarrito(){
-        int opcion = 0 ;
-        do{
-            if(carrito.getCantidadProductos() == 0){break;}
-            System.out.println("");
-            System.out.println("CARRITO DE COMPRAS");
-            carrito.mostrarCarrito();
-            System.out.println("");
-            System.out.println("1. Completar compra");
-            System.out.println("2. Borrar elemento del carrito");
-            System.out.println("3. Vaciar carrito");
-            System.out.println("4. Regresar al menu anterior");
-            opcion = sc.nextInt();
-            switch(opcion){
-                case 1:
-                    completarCompra();
-                    opcion = 4;
-                    break;
-                case 2:
-                    System.out.println("Mantemiento");
-                    /*System.out.println("Indica el número del producto a eliminar");
-                    int valor = sc.nextInt();
-                    carrito.eliminarProducto(carrito.getCarrito().get(valor));*/
-                    break;
-                case 3:
-                    carrito.vaciarCarrito();
-                    System.out.println("El carrito ha sido limpiado");
-                    break;
-                case 4:
-                    System.out.println("Regresando...");
-                    break;
-                default:
-                    System.out.println("Error, intentalo de nuevo");
-                    break;
-            }
-        }while(opcion!=4);
-        return;
+    public boolean verCarrito(){
+        if(sesion.getSesionStatus()){
+            int opcion = 0 ;
+            do{ 
+                if(carrito.getCantidadProductos() == 0){return false;}
+                System.out.println("");
+                System.out.println("CARRITO DE COMPRAS");
+                carrito.mostrarCarrito();
+                System.out.println("");
+                System.out.println("1. Completar compra");
+                System.out.println("2. Borrar elemento del carrito");
+                System.out.println("3. Vaciar carrito");
+                System.out.println("4. Regresar al menu anterior");
+                opcion = sc.nextInt();
+                switch(opcion){
+                    case 1:
+                        completarCompra();
+                        opcion = 4;
+                        break;
+                    case 2:
+                        System.out.println("Mantemiento");
+                        /*System.out.println("Indica el número del producto a eliminar");
+                        int valor = sc.nextInt();
+                        carrito.eliminarProducto(carrito.getCarrito().get(valor));*/
+                        break;
+                    case 3:
+                        carrito.vaciarCarrito();
+                        System.out.println("El carrito ha sido limpiado");
+                        break;
+                    case 4:
+                        System.out.println("Regresando...");
+                        break;
+                    default:
+                        System.out.println("Error, intentalo de nuevo");
+                        break;
+                }
+            }while(opcion!=4);
+            return true;
+        }
+        return false;
     }
 
     public void verInformaciónTienda(Tienda tienda){

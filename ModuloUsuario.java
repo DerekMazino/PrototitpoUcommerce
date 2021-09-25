@@ -17,7 +17,7 @@ public class ModuloUsuario
         this.sesion = sesion;
         this.usuario = usuario;
     }
-    
+
     public boolean buscarUsuario(String identificacion){
         for(Usuario usuario: dt.getUsuarios()){
             if(usuario.getCodigo().equals(identificacion)){
@@ -26,7 +26,7 @@ public class ModuloUsuario
         }
         return false;
     }
-    
+
     public void RegistroUsuario(){
         sc.nextLine();
         Usuario usuarioNuevo = new Usuario();
@@ -41,7 +41,8 @@ public class ModuloUsuario
         System.out.println("-Tu Email.-");
         System.out.println("Email:");
         usuarioNuevo.setEmail(sc.nextLine());
-        System.out.println("-Luego tu caelular.-");
+        System.out.println("-Luego tu celular.-");
+        System.out.println("Celular:");
         usuarioNuevo.setCelular(sc.nextLine());
         while(true){
             System.out.println("");
@@ -56,14 +57,13 @@ public class ModuloUsuario
                 System.out.println("Digita una valida");
             }
         }
-        
+
         System.out.println("Contraseña:");
         usuarioNuevo.setPassword(sc.nextLine());
-        
         dt.registarUsuario(usuarioNuevo);
         return;
     }
-    
+
     public void cargarDatosSesion(Usuario usuario){
         this.usuario.setNombre(usuario.getNombre());
         this.usuario.setApellido(usuario.getApellido());
@@ -76,7 +76,7 @@ public class ModuloUsuario
         this.usuario.setPuntuacionVendedor(usuario.getPuntuacionVendedor());
         this.usuario.setTienda(usuario.getTienda());
     }
-    
+
     public void IniciarSesion(){
         boolean exito = false;
         int intentos = 3;
@@ -106,8 +106,7 @@ public class ModuloUsuario
         }while(!exito && intentos>0);
         return;
     }
-    
-    
+
     public void MostrarPerfilUsuario(){
         System.out.println("");
         System.out.println(usuario);
@@ -115,22 +114,25 @@ public class ModuloUsuario
         try {
             //Ponemos a "Dormir" el programa durante los ms que queremos
             Thread.sleep(3*1000);
-         } catch (Exception e) {
+        } catch (Exception e) {
             System.out.println(e);
-         }
-        return;
-    }
-    
-    public void PasarModoVendedor(){
-        if(usuario.isRol()){
-            System.out.println("Ya eres vendedor! Regresa al menu principal");
-        }else{
-            usuario.cambiarRol(true);
-            System.out.println("Ahora eres un vendedor! Regresa al menu principal:");
         }
         return;
     }
-    
+
+    public boolean PasarModoVendedor(){
+        if(sesion.getSesionStatus()){
+            if(usuario.isRol()){
+                System.out.println("Ya eres vendedor! Regresa al menu principal");
+            }else{
+                usuario.cambiarRol(true);
+                System.out.println("Ahora eres un vendedor! Regresa al menu principal:");
+            }
+            return true;
+        }
+        return false;
+    }
+
     public void MenuUsuario(){
         int opcion = 0;
         do{

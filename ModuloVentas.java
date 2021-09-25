@@ -15,7 +15,7 @@ public class ModuloVentas
         this.dt = dt;
         this.usuario = usuario;
     }
-    
+
     public void tiempo(){
         try {
             //Ponemos a "Dormir" el programa durante los ms que queremos
@@ -24,7 +24,7 @@ public class ModuloVentas
             System.out.println(e);
         }
     }
-    
+
     public void cambiarNombreTienda(){
         sc.nextLine();
         System.out.println("Escribé el nuevo nombre de tu tienda");
@@ -157,17 +157,22 @@ public class ModuloVentas
         return retorno;
     }
 
+    public boolean agregarClasificado(Producto producto){
+        Seccion seccion = usuario.getTienda().buscarSeccion("Mis Clasificados");
+        if(seccion != null){
+            seccion.agregarProducto(producto);
+            return true;
+        }
+        Seccion nuevaSeccion = new Seccion("Mis Clasificados");
+        usuario.getTienda().añadirSeccion(nuevaSeccion);
+        nuevaSeccion.agregarProducto(producto);
+        return false;
+    }
+
     public void agregarASeccion(Producto producto, int opcion){
         System.out.println("");
         if(opcion == 3){
-            Seccion seccion = usuario.getTienda().buscarSeccion("Mis Clasificados");
-            if(seccion != null){
-                seccion.agregarProducto(producto);
-                return;
-            }
-            Seccion nuevaSeccion = new Seccion("Mis Clasificados");
-            usuario.getTienda().añadirSeccion(nuevaSeccion);
-            nuevaSeccion.agregarProducto(producto);
+            agregarClasificado(producto);
             return;
         }
         do{
