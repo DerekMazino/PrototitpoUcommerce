@@ -56,8 +56,6 @@ public class ModuloUsuario
         System.out.println("Contraseña:");
         usuarioNuevo.setPassword(sc.nextLine());
         
-        
-        
         dt.registarUsuario(usuarioNuevo);
         return;
     }
@@ -124,7 +122,7 @@ public class ModuloUsuario
             System.out.println("Ya eres vendedor! Regresa al menu principal");
         }else{
             usuario.cambiarRol(true);
-            System.out.println("Ahora eres vendedor! Regresa al menu principal:");
+            System.out.println("Ahora eres un vendedor! Regresa al menu principal:");
         }
         return;
     }

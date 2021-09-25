@@ -91,14 +91,19 @@ public class ModuloCompras
             System.out.println();
             seccion.listarSeccion();
             System.out.println();
-            System.out.print("Digite el número de producto para entrar,\no cualquier otra valor para salir  ");
+            System.out.print("Digite el número de producto para entrar o 0 para salir. ");
             opcion = sc.nextInt();
             opcion = opcion -1;
             if(opcion>=0 && opcion<seccion.getCantidadProductos()){
                 verProducto(seccion.getProductos().get(opcion));
                 continue;
             }
-            break;
+            else if(opcion == -1){
+                break;
+            }
+            else{
+                System.out.print("Digita un numero valido. \n");
+            }
         }while(true);
     }
 
@@ -181,7 +186,7 @@ public class ModuloCompras
                 System.out.println("Digite "+valor+" para entrar al carrito de compras");
 
             }
-            System.out.println("o cualquier otra valor para salir");
+            System.out.println("o cualquier 0 para salir.");
             opcion = sc.nextInt();
             opcion = opcion - 1;
             if(opcion>=0 && opcion<tienda.getCantidadSecciones()){
@@ -198,7 +203,12 @@ public class ModuloCompras
                 mu.MenuUsuario();
                 continue;
             }
-            break;
+            else if(opcion == -1){
+                break;
+            }
+            else{
+                System.out.print("Digita un numero valido. \n");
+            }
         }while(true);
     }
 
@@ -217,14 +227,19 @@ public class ModuloCompras
             imprimirTiendas();
             System.out.println("");
             System.out.print("Digite el número de tienda a la que deseas visitar \n");
-            System.out.print("o cualquier otro valor para regresar al menu principal: ");
+            System.out.print("o 0 para regresar al menu principal: ");
             opcion = sc.nextInt();
             opcion = opcion - 1;
             if(opcion>=0 && opcion<(dt.getTiendas().size())){
                 verInformaciónTienda(dt.getTiendas().get(opcion));
                 continue;
             }
-            break;
+            else if(opcion == -1){
+                break;
+            }
+            else{
+                System.out.print("Digita un numero valido. \n");
+            }
         }while(true);
     }
 }

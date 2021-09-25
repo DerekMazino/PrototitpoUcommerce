@@ -92,14 +92,19 @@ public class ModuloVentas
             System.out.println();
             seccion.listarSeccion();
             System.out.println();
-            System.out.print("Digite el número de producto para entrar,\no cualquier otra valor para salir  ");
+            System.out.print("Digite el número de producto para entrar, o 0 para salir. ");
             opcion = sc.nextInt();
             opcion = opcion -1;
             if(opcion>=0 && opcion<seccion.getCantidadProductos()){
                 verProducto(seccion.getProductos().get(opcion));
                 continue;
             }
-            break;
+            else if(opcion == -1){
+                break;
+            }
+            else{
+                System.out.print("Digita un numero valido. \n");
+            }
         }while(true);
     }
 
@@ -108,7 +113,7 @@ public class ModuloVentas
         do{
             System.out.println("");
             usuario.getTienda().ListarSecciones();
-            System.out.print("Digite el número de sección para entrar,\no cualquier otra valor para salir  ");
+            System.out.print("Digite el número de sección para entrar, o 0 para salir.  ");
 
             opcion = sc.nextInt();
             opcion = opcion -1;
@@ -116,7 +121,12 @@ public class ModuloVentas
                 AbrirSeccion(usuario.getTienda().getSecciones().get(opcion));
                 continue;
             }
-            break;
+            else if(opcion == -1){
+                break;
+            }
+            else{
+                System.out.print("Digita un numero valido. \n");
+            }
         }while(true);
     }
 
@@ -166,7 +176,7 @@ public class ModuloVentas
             int numero = usuario.getTienda().getCantidadSecciones() + 1;
             System.out.println("Indica la sección donde deseas agregar el producto");
             System.out.println("o marca "+numero +" para crear una nueva seccion");
-            System.out.println("Cualquier otro valor para salir");
+            System.out.println("o 0 para salir.");
             opcion = sc.nextInt();
             opcion = opcion -1;
             if(opcion>=0 && opcion<usuario.getTienda().getCantidadSecciones()){
@@ -181,7 +191,12 @@ public class ModuloVentas
                 nuevaSeccion.agregarProducto(producto);
                 return;
             }
-            break;
+            else if(opcion == -1){
+                break;
+            }
+            else{
+                System.out.print("Digita un numero valido. \n");
+            }
         }while(true);
 
         int opcion1 = sc.nextInt();
