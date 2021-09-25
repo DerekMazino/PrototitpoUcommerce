@@ -74,6 +74,7 @@ public class ModuloCompras
     public void verProducto(Producto producto){
         int opcion;
         producto.mostrarProducto();
+        System.out.println("");
         System.out.println("1. Agregar al carrito de compras");
         System.out.println("2. Volver a la sección anterior");
         opcion = sc.nextInt();
@@ -176,10 +177,13 @@ public class ModuloCompras
         carrito = new CarritoDeCompras(usuario, tienda);
         do{
             System.out.println("");
-            System.out.println("Bienvenid@s a "+tienda.getNombreTienda());
-            System.out.println("Carrito de Compras: "+carrito.getCarrito().size());
+            System.out.println("Bienvenid@s a "+tienda.getNombreTienda()+"\n");
+            System.out.println("**********************");
+            System.out.println("CARRITO DE COMPRAS: "+carrito.getCarrito().size());
+            System.out.println("**********************");
             System.out.println("Mira nuestras Secciones");
             tienda.ListarSecciones();
+            System.out.println("");
             System.out.print("Digite el número de sección para entrar\n");
             if(carrito.getCarrito().size()>0){
                 int valor = tienda.getCantidadSecciones() +1;
@@ -215,6 +219,7 @@ public class ModuloCompras
     public void imprimirTiendas(){
         int i = 0;
         System.out.println("");
+        System.out.println("U-Commerce: Modulo de Compras. \n");
         for(Tienda tienda: dt.getTiendas()){
             i++;
             System.out.println(i+". "+tienda.getNombreTienda());

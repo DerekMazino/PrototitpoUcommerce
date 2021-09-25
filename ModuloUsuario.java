@@ -32,13 +32,16 @@ public class ModuloUsuario
         Usuario usuarioNuevo = new Usuario();
         System.out.println("REGISTRO DE USUARIO!");
         System.out.println("");
+        System.out.println("-Escribe a continuación tu nombre solamente.-");
         System.out.println("Nombre:");
         usuarioNuevo.setNombre(sc.nextLine());
+        System.out.println("-Ahora tu apellido.-");
         System.out.println("Apellido:");
         usuarioNuevo.setApellido(sc.nextLine());
+        System.out.println("-Tu Email-");
         System.out.println("Email:");
         usuarioNuevo.setEmail(sc.nextLine());
-        System.out.println("Celular:");
+        System.out.println("-Luego tu caelular-");
         usuarioNuevo.setCelular(sc.nextLine());
         while(true){
             System.out.println("Identificacion:");
@@ -131,7 +134,7 @@ public class ModuloUsuario
         int opcion = 0;
         do{
             System.out.println("");
-            System.out.println("U-Commerce: Modulo de Usuario");
+            System.out.println("U-Commerce: Modulo de Usuario.");
             System.out.println("");
             if(sesion.getSesionStatus()){
                 System.out.println("1. Ver perfil de usuario");
