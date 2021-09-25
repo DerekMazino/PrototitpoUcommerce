@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Regular
-comment0.text=\n\ Write\ a\ description\ of\ class\ Regular\ here.\n\ \n\ @author\ (Camilo\ Mar\u00EDn,\ Deyci\ Toloza)\ \n\ @version\ (Versi\u00F3n\ 1)\n
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ Regular\ here.\r\n\ \r\n\ @author\ (Camilo\ Mar\u00EDn,\ Deyci\ Toloza)\ \r\n\ @version\ (Versi\u00F3n\ 1)\r\n
 comment1.params=nombre\ descripcion\ categoria\ stock\ precioUnitario
 comment1.target=Regular(java.lang.String,\ java.lang.String,\ Categoria,\ int,\ double)
 comment2.params=nombre\ descripcion\ categoria\ imagen\ stock\ precioUnitario
