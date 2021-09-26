@@ -34,6 +34,16 @@ public class ModuloCompras
         }
     }
 
+    public void descontarUnidadesCarrito(Producto producto, int cantidad){
+        if(producto instanceof Regular){
+            Regular regular = (Regular) producto;
+            regular.setStock(regular.getStock()-cantidad);
+        }else{
+            Servicio servicio = (Servicio) producto;
+            servicio.setCupos(servicio.getCupos()-cantidad);
+        }
+    }
+
     public void agregarAlCarrito(Producto producto){
         do{
             int cantidad1 = 0;
@@ -63,6 +73,7 @@ public class ModuloCompras
                 System.out.println("");
             }else{
                 carrito.agregarProducto(producto, cantidad);
+                descontarUnidadesCarrito(producto, cantidad);
                 System.out.println("");
                 System.out.println("Elemento agregado con exito");
                 System.out.println("");
@@ -112,25 +123,26 @@ public class ModuloCompras
         System.out.println("");
         System.out.println("Se notificará al vendedor de su intención de compra");
         System.out.println("Será contactado por este en el menor tiempo posible");
-        for(Producto producto: carrito.getCarrito().keySet()){
-            if(!(producto instanceof Clasificado)){
-                if(producto instanceof Regular){
-                    Regular regular = (Regular) producto;
-                    regular.setStock(regular.getStock()-carrito.getCarrito().get(producto));
-                }else{
-                    Servicio servicio = (Servicio) producto;
-                    servicio.setCupos(servicio.getCupos()-carrito.getCarrito().get(producto));
-                }
-
-            }
-        }
+        
         carrito.vaciarCarrito();
         System.out.println("Regresando...");
         tiempo();
     }
 
     public void borrarElementoCarrito(){
+        for(Producto producto: carrito.getCarrito().keySet()){
+            if(!(producto instanceof Clasificado)){
+                if(producto instanceof Regular){
+                    Regular regular = (Regular) producto;
+                    regular.setStock(regular.getStock()+carrito.getCarrito().get(producto));
+                }else{
+                    Servicio servicio = (Servicio) producto;
+                    servicio.setCupos(servicio.getCupos()+carrito.getCarrito().get(producto));
+                }
 
+            }
+        }
+        carrito.vaciarCarrito();
     }
 
     public boolean verCarrito(){
@@ -159,7 +171,7 @@ public class ModuloCompras
                         carrito.eliminarProducto(carrito.getCarrito().get(valor));*/
                         break;
                     case 3:
-                        carrito.vaciarCarrito();
+                        borrarElementoCarrito();
                         System.out.println("El carrito ha sido limpiado");
                         break;
                     case 4:
